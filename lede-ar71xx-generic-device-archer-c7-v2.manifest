@@ -1,5 +1,5 @@
 ath10k-firmware-qca988x - 2017-03-29-956e2609-1
-base-files - 174-r4741+3-7a89094
+base-files - 174-r4746+4-6c9e2d4
 bcp38 - 5-3
 blkid - 2.30.1-2
 block-mount - 2017-07-31-8ab4fda6-1
@@ -9,7 +9,7 @@ ca-bundle - 20170717
 ca-certificates - 20170717
 curl - 7.54.1-1
 dmesg - 2.30.1-2
-dnsmasq - 2.77-8
+dnsmasq - 2.77-9
 dropbear - 2017.75-3
 e2fsprogs - 1.43.5-1
 etherwake - 1.09-4
