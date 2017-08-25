@@ -21,7 +21,7 @@
 +	beacon_int.optional = true
 +	beacon_int.placeholder = 100
 +	legacy_rates = s:taboption("general", Flag, "legacy_rates", translate("Enable Legacy Rates"))
-+	legacy_rates.default = legacy_rates.enabled
++	legacy_rates.default = legacy_rates.disabled
  end
  
  
@@ -33,9 +33,9 @@
 +	short_preamble = s:taboption("general", Flag, "short_preamble", translate("Short Preamble"))
 +	short_preamble.default = short_preamble.enabled
 +
-+	isolate = s:taboption("general", Flag, "isolate", translate("Wireless Client Isolation"))
-+	isolate.optional = true
-+	isolate:depends({mode="ap"})
++	-- isolate = s:taboption("general", Flag, "isolate", translate("Wireless Client Isolation"))
++	-- isolate.optional = true
++	-- isolate:depends({mode="ap"})
 +
 +	dtim_period = s:taboption("general", Value, "dtim_period", translate("DTIM Interval"),"Delivery Traffic Indication Message Interval")
 +	dtim_period.optional = true
