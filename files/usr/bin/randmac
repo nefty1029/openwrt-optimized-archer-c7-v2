@@ -1,0 +1,1 @@
+dd bs=1 count=6 if=/dev/random 2>/dev/null | hexdump -v -e '/1 "%02X"' | sed 's/\(..\)/:\1/g; s/^.\(.\)[0-3]/\12/; s/^.\(.\)[4-7]/\16/; s/^.\(.\)[89AB]/\1A/; s/^.\(.\)[CDEF]/\1E/' | sed G

@@ -1,3 +1,8 @@
-sleep 10
-/etc/init.d/dnscrypt-proxy restart
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+
+#Scan with 5G radio to fix signal icons in luci
+iw wlan0 scan &>/dev/null
+
 exit 0
+
