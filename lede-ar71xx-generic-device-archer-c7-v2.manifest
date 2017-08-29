@@ -1,5 +1,5 @@
 ath10k-firmware-qca988x - 2017-03-29-956e2609-1
-base-files - 174-r4746+4-6c9e2d4
+base-files - 174-r4753+5-2f0a855
 bcp38 - 5-3
 blkid - 2.30.1-2
 block-mount - 2017-07-31-8ab4fda6-1
@@ -30,7 +30,7 @@ iw - 4.9-1
 iwinfo - 2017-08-23-c1a03e82-1
 jshn - 2017-06-17-fd57eea9-1
 jsonfilter - 2016-07-02-dea067ad-1
-kernel - 4.4.83-1-0e5439585fadfd33beb9fa6ac48cf357
+kernel - 4.4.83-1-73c40bd004d16b1496a0ec817606b05c
 kmod-ath - 4.4.83+2017-01-31-2
 kmod-ath10k - 4.4.83+2017-01-31-2
 kmod-ath9k - 4.4.83+2017-01-31-2
@@ -70,6 +70,7 @@ kmod-lib-crc16 - 4.4.83-1
 kmod-lib-crc32c - 4.4.83-1
 kmod-loop - 4.4.83-1
 kmod-mac80211 - 4.4.83+2017-01-31-2
+kmod-mii - 4.4.83-1
 kmod-nf-conntrack - 4.4.83-1
 kmod-nf-conntrack6 - 4.4.83-1
 kmod-nf-ipt - 4.4.83-1
@@ -93,6 +94,9 @@ kmod-tun - 4.4.83-1
 kmod-usb-core - 4.4.83-1
 kmod-usb-ehci - 4.4.83-1
 kmod-usb-ledtrig-usbport - 4.4.83-1
+kmod-usb-net - 4.4.83-1
+kmod-usb-net-cdc-ether - 4.4.83-1
+kmod-usb-net-rndis - 4.4.83-1
 kmod-usb-ohci - 4.4.83-1
 kmod-usb-printer - 4.4.83-1
 kmod-usb-storage - 4.4.83-1
