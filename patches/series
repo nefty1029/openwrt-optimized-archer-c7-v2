@@ -7,8 +7,8 @@
 008-generic-kernel-options.patch
 008-remove-kernel-debug.patch
 009-ar71xx-kernel-options.patch
+009-detach-rtl8366-smi-dependency.patch
 010-no-l2-cache-runtime-check.patch
-015-reg-wireless.patch
 016-enable-wireless-default.patch
 017-harden-buildroot.patch
 040-gcc-final-toolchain-74kc-optimize.patch
@@ -30,4 +30,4 @@
 081-enable-openssl-thread.patch
 081-modify-libnl-tiny-cflag.patch
 202-funit-at-a-time.patch
-999-disable-gro-gso-default.patch
+999-disable-gso-default.patch
