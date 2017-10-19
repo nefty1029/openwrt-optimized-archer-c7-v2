@@ -30,4 +30,4 @@
 081-enable-openssl-thread.patch
 081-modify-libnl-tiny-cflag.patch
 202-funit-at-a-time.patch
-999-disable-gso-default.patch
+999-disable-gro-gso-default.patch
