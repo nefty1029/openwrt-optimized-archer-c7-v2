@@ -1550,49 +1550,55 @@ body.lang_pl.node-main-login .cbi-value-title {
 
 /* more fixes */
 tr > td > div[style^="max-width:200px;overflow:hidden"] {
-	max-width: none !important;
-	overflow: visible !important;
+    max-width: none !important;
+    overflow: visible !important;
 }
 
 body[class$="node-network-wireless"] h2,
 body[class$="node-status-overview"] h2 {
-	margin-bottom: -10px !important;
+    margin-bottom: -10px !important;
 }
 
 .zonebadge .ifacebadge {
-	margin-top: 0.3rem !important;
+    margin-top: 0.3rem !important;
 }
 
 .cbi-input-radio[value="lan"],
 .cbi-input-radio[value="wan"] {
-	margin-top: 1.3rem !important;
+    margin-top: 1.3rem !important;
 }
 
 .cbi-input-radio[value="-"] {
-	margin-top: 0.8rem !important;
+    margin-top: 0.8rem !important;
 }
 
 body[class$="node-services-adblock"] h3 {
-	margin: 0px !important;
+    margin: 0px !important;
 }
 
 #iw-assoclist > tbody > tr > td:nth-child(6) {
-	width: 500px !important;
+    width: 500px !important;
+}
+
+@media screen and (min-width: 1600px) {
+    fieldset {
+        overflow-x: hidden;
+    }
 }
 
 ::-webkit-scrollbar {
-  background: transparent;
-  width: 10px;
+    background: transparent;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #9E9E9E;
+    background: #9e9e9e;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #757575;
+    background: #757575;
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: #424242;
+    background: #424242;
 }
