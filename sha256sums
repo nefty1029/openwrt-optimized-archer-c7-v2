@@ -1,6 +1,6 @@
-fcfb7c1f239584effce558dfbe4f67006c92024aab2b7c36c2c1f3768f0c7c49 *config.seed
-f631be8bbc4d4bdbc86a965520c2b495309d643c6052076159e1558d065b0122 *lede-ar71xx-generic-archer-c7-v2-squashfs-factory-eu.bin
-8bb5fbf353c0b767e9f4f1c3f410296a43a819d9878a5727c2be128e716abc92 *lede-ar71xx-generic-archer-c7-v2-squashfs-factory-us.bin
-698156652ec08614893f2869c6fdf7e24d3210ec99d8cc1b09c2afbc09d638d9 *lede-ar71xx-generic-archer-c7-v2-squashfs-factory.bin
-05983c1aa99b4fc75244e8a7d706f703629cbd510884eea2c4b6645077b6d0fc *lede-ar71xx-generic-archer-c7-v2-squashfs-sysupgrade.bin
-c413064eda8e41fbe5f90d050f169b1db897e189a947598ff893c649eaf621a3 *lede-ar71xx-generic-device-archer-c7-v2.manifest
+2c73456104b5d88ee8820181b34b0c7b2ad8df38c1029f66d66ba3ae429308d1 *config.seed
+700890ccb86c1d536ffa30ae04693f58369b99b74dca835e47001e544ac2b70c *lede-ar71xx-generic-archer-c7-v2-squashfs-factory-eu.bin
+4b93cf05bb97d5b48faab58c25213404c193e4ffc4fb05670cf12113dc6f3713 *lede-ar71xx-generic-archer-c7-v2-squashfs-factory-us.bin
+2a8e3e7f6ff2895f47b870eff7e07dd0f7a6afd4ad88cfd362d23802c5fbafe3 *lede-ar71xx-generic-archer-c7-v2-squashfs-factory.bin
+a6e7a560adccc837d31499e938d89b5908cee2c2e976c55f53a4d95d0a623d86 *lede-ar71xx-generic-archer-c7-v2-squashfs-sysupgrade.bin
+aa031a5cba25466d58d0e8f92fe698dd62306ed463a0d4c7c46323c9e76bba0a *lede-ar71xx-generic-device-archer-c7-v2.manifest
