@@ -7,7 +7,7 @@ index 3099448..cc9c546 100644
    BuildTarget=$(BuildTargets/DumpCurrent)
  
 -  CPU_CFLAGS = -Os -pipe
-+  CPU_CFLAGS = -O3 -pipe
++  CPU_CFLAGS = -O2 -pipe
    ifneq ($(findstring mips,$(ARCH)),)
      ifneq ($(findstring mips64,$(ARCH)),)
        CPU_TYPE ?= mips64
