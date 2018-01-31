@@ -1,0 +1,50 @@
+#!/bin/sh
+
+wan=`uci get network.wan.ifname`
+pid=`cat "/var/run/udhcpc-${wan}.pid"`
+config=network.wan.macaddr
+
+randmac() {
+	dd bs=1 count=6 if=/dev/random 2>/dev/null | hexdump -v -e '/1 "%02X"' | sed 's/\(..\)/:\1/g; s/^.\(.\)[0-3]/\12/; s/^.\(.\)[4-7]/\16/; s/^.\(.\)[89AB]/\1A/; s/^.\(.\)[CDEF]/\1E/'
+}
+
+if [ "$1" = "ip" ]; then
+	if [ "$2" = "release" ]; then
+		kill -s SIGUSR2 "$pid"
+	elif [ "$2" = "renew" ]; then
+		kill -s SIGUSR1 "$pid"
+	elif [ "$2" = "toggle" ]; then
+		kill -s SIGUSR2 "$pid"
+		sleep 1
+		kill -s SIGUSR1 "$pid"
+	else
+		echo "Usage: wan-addr ip [release|renew|toggle]"
+	fi
+elif [ "$1" = "mac" ]; then
+	if [ "$2" = "get" ]; then
+		uci get "$config"
+	elif [ "$2" = "set" ]; then
+		if [ "$3" = "random" ]; then
+			mac=`randmac`
+		elif [ ${#3} -eq 17 ]; then
+			mac=$3
+		else
+			echo "wan-addr: mac: error: set valid MAC address or 'set random'"
+			exit 1
+		fi
+		uci set "$config"="$mac"
+		uci commit
+	else
+		echo "Usage: wan-addr mac [get|set (MAC|random)]"
+	fi
+elif [ "$1" = "status" ]; then
+	ifconfig "$wan"
+elif [ "$1" = "restart" ]; then
+	/etc/init.d/network restart
+elif [ "$1" = "randmac" ]; then
+	echo `randmac`
+else
+	echo "Usage: wan-addr [status|restart|randmac]"
+	echo "       wan-addr ip [release|renew|toggle]"
+	echo "       wan-addr mac [get|set (MAC|random)]"
+fi

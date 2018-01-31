@@ -1,8 +1,11 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
-#Scan with 5G radio to fix signal icons in luci
+# Disable nfsd by default
+/etc/init.d/nfsd disable
+/etc/init.d/nfsd stop &>/dev/null
+
+# Scan with 5G radio to fix signal icons in luci
 iw wlan0 scan &>/dev/null
 
 exit 0
-

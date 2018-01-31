@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if [ "$1" = "list" ]; then
+    iwinfo wlan0 assoclist | grep ago && iwinfo wlan1 assoclist | grep ago
+elif [ "$1" = "find" ]; then
+	if [ -n "$2" ]; then
+		cat /etc/config/dhcp | grep -i -A 2 -B 2 "$2" | egrep -i "name|mac"
+	else
+		echo "wlan-kick: find: error: search for hostname or MAC address"
+		exit 1
+	fi
+elif [ -n "$1" ]; then
+	if [ ${#1} -eq 17 ]; then
+		ubus call hostapd.wlan0 del_client '{"addr":"'$1'", "reason":1, "deauth":true, "ban_time":1000}'
+		ubus call hostapd.wlan1 del_client '{"addr":"'$1'", "reason":1, "deauth":true, "ban_time":1000}'
+	else
+		echo "wlan-kick: error: invalid MAC address"
+		exit 1
+	fi
+else
+	echo "Usage: wlan-kick [MAC|list|find]"
+fi
