@@ -15,7 +15,6 @@
 043-musl-enable-visibility-pic.patch
 044-mips-musl-optimize.patch
 045-port-uclibcng-mips-memset-memcpy-optimize.patch
-054-netdev-align-NET_SKB_PAD-platform.patch
 059-ag71xx-DMA-unmap-FROM_DEVICE-no-op-for-our-arch.patch
 059-pack-ag71xx.patch
 059-remove-dma-no-op-from-ath9k.patch
