@@ -1,6 +1,6 @@
-e3e380edb6b32d14a7abc1cb8cc694902b6f11c3306ad79b6c52adb9146346a7 *config.seed
-880026903ed213f831a07923cfc81d8a38ea2d579408b3d2077ef0103b24886e *openwrt-ar71xx-generic-archer-c7-v2-squashfs-factory-eu.bin
-51cd48c47bb94e1eaabf7ed1fa89399d87c7eda122b9ebc9f1267cf8a4ada2ba *openwrt-ar71xx-generic-archer-c7-v2-squashfs-factory-us.bin
-cbac4884fed25afe34c72c7e019fa749069b30614471592eadc6a726d1ec247c *openwrt-ar71xx-generic-archer-c7-v2-squashfs-factory.bin
-2591fad4a2f5baca42fab26fdb4b9f81b41b7d39a81c05bf22a5afa3c87c34bd *openwrt-ar71xx-generic-archer-c7-v2-squashfs-sysupgrade.bin
-f9f1a1f82a594f32c247808f550b719769dd1a1e55616d8dcf1edce819c325fc *openwrt-ar71xx-generic-device-archer-c7-v2.manifest
+c62d1a908a5684362cc495d604d06a8f1e5f603cdfe4472ed3b5357246a0877e *config.seed
+2fad908106918521c2cc9a570b784ca2f28dbac36c60823b78313dd99ba5ff28 *openwrt-ar71xx-generic-archer-c7-v2-squashfs-factory-eu.bin
+9b67504063d4af3db9b59307f950ca39a09cc61801442698b9ed6b099323d48f *openwrt-ar71xx-generic-archer-c7-v2-squashfs-factory-us.bin
+400bbb489b47ce1b27ee80f501d9380533b73289fcd593ada09aaf71d03a7b2a *openwrt-ar71xx-generic-archer-c7-v2-squashfs-factory.bin
+d1e0735595dcdc26567dd54fc8a2819b4142042a7fa8d9eee2773a8a2dfad31a *openwrt-ar71xx-generic-archer-c7-v2-squashfs-sysupgrade.bin
+644dd606764f56538d992f56f14519350e565b567ee4b9b0e965eaf537859dc5 *openwrt-ar71xx-generic-device-archer-c7-v2.manifest
