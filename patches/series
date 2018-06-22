@@ -1,5 +1,4 @@
 001-mips-cflag-optimization.patch
-002-mips74kc-set-optimization.patch
 003-disable-mips16-all-package.patch
 004-kernel-mtune74kc.patch
 005-lzma-mips74kc-optimize.patch
@@ -24,7 +23,6 @@
 062-luci-vlan.patch
 063-add-luci-mips-processor-march.patch
 064-luci-wifi-add-feature.patch
-065-use-openssl-for-hostapd.patch
 081-enable-openssl-thread.patch
 081-modify-libnl-tiny-cflag.patch
 202-funit-at-a-time.patch
