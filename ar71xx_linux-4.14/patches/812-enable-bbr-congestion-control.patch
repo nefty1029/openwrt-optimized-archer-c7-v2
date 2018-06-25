@@ -1,6 +1,6 @@
---- /dev/null
-+++ ./target/linux/ar71xx/config-4.14
-@@ -479,3 +479,6 @@
+--- a/target/linux/ar71xx/config-4.14
++++ b/target/linux/ar71xx/config-4.14
+@@ -477,3 +477,6 @@ CONFIG_SYS_SUPPORTS_ZBOOT=y
  CONFIG_SYS_SUPPORTS_ZBOOT_UART_PROM=y
  CONFIG_TICK_CPU_ACCOUNTING=y
  CONFIG_USB_SUPPORT=y

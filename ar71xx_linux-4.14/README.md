@@ -1,4 +1,4 @@
-This build uses the same configuration but with the 4.14 kernel instead of 4.9 using [this pull request](https://github.com/openwrt/openwrt/pull/1013) by jollaman999.
+This build uses the same configuration with less patches but with the 4.14 kernel instead of 4.9 using [this pull request](https://github.com/openwrt/openwrt/pull/1013) by jollaman999.
 
 References to "linux/mtd/nand.h" replaced with "linux/mtd/rawnand.h" by:
 

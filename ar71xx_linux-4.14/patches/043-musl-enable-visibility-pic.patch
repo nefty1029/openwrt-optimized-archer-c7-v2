@@ -1,8 +1,6 @@
-diff --git a/toolchain/musl/common.mk b/toolchain/musl/common.mk
-index 3045c63..3ef6324 100644
 --- a/toolchain/musl/common.mk
 +++ b/toolchain/musl/common.mk
-@@ -34,8 +34,9 @@ MUSL_CONFIGURE:= \
+@@ -36,8 +36,9 @@ MUSL_CONFIGURE:= \
  		--prefix=/ \
  		--host=$(GNU_HOST_NAME) \
  		--target=$(REAL_GNU_TARGET_NAME) \
@@ -11,5 +9,5 @@ index 3045c63..3ef6324 100644
 -		--enable-debug
 +		--disable-debug
  
- define Host/Prepare
- 	$(call Host/Prepare/Default)
+ define Host/Configure
+ 	ln -snf $(PKG_NAME)-$(PKG_VERSION) $(BUILD_DIR_TOOLCHAIN)/$(PKG_NAME)

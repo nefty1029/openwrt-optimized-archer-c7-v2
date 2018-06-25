@@ -1,8 +1,6 @@
-diff --git a/package/kernel/mac80211/files/lib/wifi/mac80211.sh b/package/kernel/mac80211/files/lib/wifi/mac80211.sh
-index 4bfc742..795b3e7 100644
 --- a/package/kernel/mac80211/files/lib/wifi/mac80211.sh
 +++ b/package/kernel/mac80211/files/lib/wifi/mac80211.sh
-@@ -116,7 +116,6 @@ detect_mac80211() {
+@@ -113,7 +113,6 @@ detect_mac80211() {
  			set wireless.radio${devidx}.hwmode=11${mode_band}
  			${dev_id}
  			${ht_capab}
