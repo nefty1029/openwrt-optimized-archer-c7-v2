@@ -1,5 +1,5 @@
 ath10k-firmware-qca988x - 2018-05-12-952afa49-1
-base-files - 191-r7314+6-c4aadbd
+base-files - 191-r7314+7-c4aadbd
 bcp38 - 5-4
 blkid - 2.32-2
 block-mount - 2018-05-23-dd02dad3-1
@@ -176,7 +176,7 @@ luci-app-firewall - git-18.163.60998-c379f00-1
 luci-app-hd-idle - git-18.163.60998-c379f00-1
 luci-app-openvpn - git-18.163.60998-c379f00-1
 luci-app-p910nd - git-18.163.60998-c379f00-1
-luci-app-simple-adblock - git-18.163.60998-c379f00-5
+luci-app-simple-adblock - git-18.163.60998-c379f00-7
 luci-app-sqm - 1.2.3-1
 luci-app-upnp - git-18.163.60998-c379f00-1
 luci-app-wol - git-18.163.60998-c379f00-1
@@ -214,7 +214,7 @@ ppp-mod-pppoe - 2.4.7-12
 procd - 2018-03-28-dfb68f85-1
 rpcd - 2018-05-13-82062195-1
 rpcd-mod-rrdns - 20170710
-simple-adblock - 1.5.8-1
+simple-adblock - 1.6.2-0
 sqm-scripts - 1.2.3-1
 swconfig - 11
 tc - 4.16.0-3
