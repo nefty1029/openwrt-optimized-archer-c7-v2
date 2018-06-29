@@ -1,8 +1,8 @@
---- a/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
-+++ b/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
-@@ -176,7 +176,7 @@
- 	 */
- 	void __iomem		*mac_base;
+--- a/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
++++ b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
+@@ -172,7 +172,7 @@
+ 	void __iomem		*mii_base;
+ 	struct regmap		*mii_regmap;
  
 -	struct ag71xx_desc	*stop_desc;
 +	struct ag71xx_desc	*stop_desc __attribute__((aligned(4)));

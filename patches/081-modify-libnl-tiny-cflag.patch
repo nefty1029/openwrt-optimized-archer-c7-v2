@@ -1,5 +1,3 @@
-diff --git a/package/libs/libnl-tiny/src/Makefile b/package/libs/libnl-tiny/src/Makefile
-index 6f37160..24946ea 100644
 --- a/package/libs/libnl-tiny/src/Makefile
 +++ b/package/libs/libnl-tiny/src/Makefile
 @@ -1,6 +1,6 @@

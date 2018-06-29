@@ -1,6 +1,3 @@
-diff --git a/package/kernel/mac80211/patches/941-remove-dma-no-op-from-ath9k.patch b/package/kernel/mac80211/patches/941-remove-dma-no-op-from-ath9k.patch
-new file mode 100644
-index 0000000..553ceb9
 --- /dev/null
 +++ b/./package/kernel/mac80211/patches/941-remove-dma-no-op-from-ath9k.patch
 @@ -0,0 +1,61 @@

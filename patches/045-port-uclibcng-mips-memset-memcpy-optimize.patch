@@ -1,6 +1,3 @@
-diff --git a/./toolchain/musl/patches/931-add-mips-includes.patch b/./toolchain/musl/patches/931-add-mips-includes.patch
-new file mode 100644
-index 0000000..6aa762a
 --- /dev/null
 +++ b/./toolchain/musl/patches/931-add-mips-includes.patch
 @@ -0,0 +1,778 @@
@@ -782,9 +779,6 @@ index 0000000..6aa762a
 ++#define _MIPS_SIM_ABI64		_ABI64
 ++
 ++#endif /* sgidefs.h */
-diff --git a/./toolchain/musl/patches/932-add-mips-memcpy-memset-optimize.patch b/./toolchain/musl/patches/932-add-mips-memcpy-memset-optimize.patch
-new file mode 100644
-index 0000000..32e6df4
 --- /dev/null
 +++ b/./toolchain/musl/patches/932-add-mips-memcpy-memset-optimize.patch
 @@ -0,0 +1,1313 @@

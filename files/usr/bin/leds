@@ -1,7 +1,7 @@
 #!/bin/sh
 
-leds1=/sys/devices/platform/leds-gpio/leds/tp-link:blue:
-leds2=/sys/devices/virtual/leds/tp-link:blue:
+leds1=/sys/devices/platform/leds/leds/tp-link:green:
+#leds2=/sys/devices/virtual/leds/tp-link:green:
 
 if [ "$1" = "on" ]; then
 	echo phy1tpt > ${leds1}wlan2g/trigger
@@ -9,22 +9,22 @@ if [ "$1" = "on" ]; then
 	echo 255 > ${leds1}system/brightness
 	echo 255 > ${leds1}wlan2g/brightness
 	echo 255 > ${leds1}wlan5g/brightness
-	echo 1 > ${leds2}lan1/enable_hw_mode
-	echo 1 > ${leds2}lan2/enable_hw_mode
-	echo 1 > ${leds2}lan3/enable_hw_mode
-	echo 1 > ${leds2}lan4/enable_hw_mode
-	echo 1 > ${leds2}wan/enable_hw_mode
+#	echo 1 > ${leds2}lan1/enable_hw_mode
+#	echo 1 > ${leds2}lan2/enable_hw_mode
+#	echo 1 > ${leds2}lan3/enable_hw_mode
+#	echo 1 > ${leds2}lan4/enable_hw_mode
+#	echo 1 > ${leds2}wan/enable_hw_mode
 elif [ "$1" = "off" ]; then
 	echo none > ${leds1}wlan2g/trigger
 	echo none > ${leds1}wlan5g/trigger
 	echo 0 > ${leds1}system/brightness
 	echo 0 > ${leds1}wlan2g/brightness
 	echo 0 > ${leds1}wlan5g/brightness
-	echo 0 > ${leds2}lan1/enable_hw_mode
-	echo 0 > ${leds2}lan2/enable_hw_mode
-	echo 0 > ${leds2}lan3/enable_hw_mode
-	echo 0 > ${leds2}lan4/enable_hw_mode
-	echo 0 > ${leds2}wan/enable_hw_mode
+#	echo 0 > ${leds2}lan1/enable_hw_mode
+#	echo 0 > ${leds2}lan2/enable_hw_mode
+#	echo 0 > ${leds2}lan3/enable_hw_mode
+#	echo 0 > ${leds2}lan4/enable_hw_mode
+#	echo 0 > ${leds2}wan/enable_hw_mode
 else
 	echo "Usage: leds [on|off]"
 fi

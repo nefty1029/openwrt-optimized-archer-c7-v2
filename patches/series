@@ -1,12 +1,11 @@
 001-mips-cflag-optimization.patch
 003-disable-mips16-all-package.patch
-004-kernel-mtune74kc.patch
+004-kernel-mtune-74kc.patch
 005-lzma-mips74kc-optimize.patch
 006-branch-likely-optimize.patch
 008-generic-kernel-options.patch
 008-remove-kernel-debug.patch
-009-ar71xx-kernel-options.patch
-009-detach-rtl8366-smi-dependency.patch
+009-ath79-kernel-options.patch
 010-no-l2-cache-runtime-check.patch
 015-wireless-regdb.patch
 016-enable-wireless-default.patch
@@ -19,7 +18,7 @@
 059-ag71xx-reorder-ring-struct.patch
 059-pack-ag71xx.patch
 059-remove-dma-no-op-from-ath9k.patch
-059-strip-even-more-debug-ar71xx.patch
+059-strip-even-more-debug-ag71xx.patch
 060-remove-debug-napi.patch
 061-remove-pppoa-luci.patch
 062-luci-vlan.patch
@@ -27,6 +26,5 @@
 064-luci-wifi-add-feature.patch
 081-enable-openssl-thread.patch
 081-modify-libnl-tiny-cflag.patch
-202-funit-at-a-time.patch
+222-funit-at-a-time.patch
 812-enable-bbr-congestion-control.patch
-999-disable-gro-gso-default.patch

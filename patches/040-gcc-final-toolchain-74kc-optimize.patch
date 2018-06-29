@@ -1,5 +1,3 @@
-diff --git a/toolchain/gcc/final/Makefile b/toolchain/gcc/final/Makefile
-index 3434d89..f64242b 100644
 --- a/toolchain/gcc/final/Makefile
 +++ b/toolchain/gcc/final/Makefile
 @@ -7,9 +7,11 @@ GCC_CONFIGURE += \
@@ -15,8 +13,6 @@ index 3434d89..f64242b 100644
  	--with-libelf=$(TOPDIR)/staging_dir/host
  
  ifdef CONFIG_USE_MUSL
-diff --git a/toolchain/Config.in b/toolchain/Config.in
-index c7072fc..eee45cb 100644
 --- a/toolchain/Config.in
 +++ b/toolchain/Config.in
 @@ -28,7 +28,7 @@ menuconfig TARGET_OPTIONS

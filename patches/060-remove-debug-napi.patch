@@ -1,6 +1,6 @@
---- a/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-+++ b/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-@@ -963,7 +963,7 @@
+--- a/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
++++ b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
+@@ -981,7 +981,7 @@
  
  	DBG("%s: processing TX ring\n", ag->dev->name);
  
@@ -9,7 +9,7 @@
  		unsigned int i = (ring->dirty + n) & ring_mask;
  		struct ag71xx_desc *desc = ag71xx_ring_desc(ring, i);
  		struct sk_buff *skb = ring->buf[i].skb;
-@@ -1042,7 +1042,7 @@
+@@ -1060,7 +1060,7 @@
  		if (ag71xx_desc_empty(desc))
  			break;
  
@@ -18,7 +18,7 @@
  			ag71xx_assert(0);
  			break;
  		}
-@@ -1117,7 +1117,7 @@
+@@ -1130,7 +1130,7 @@
  	DBG("%s: processing RX ring\n", dev->name);
  	rx_done = ag71xx_rx_packets(ag, limit);
  
@@ -27,7 +27,7 @@
  
  	if (rx_ring->buf[rx_ring->dirty % rx_ring_size].rx_buf == NULL)
  		goto oom;
-@@ -1194,7 +1194,7 @@
+@@ -1207,7 +1207,7 @@
  		napi_schedule(&ag->napi);
  	}
  
@@ -36,16 +36,3 @@
  
  	return IRQ_HANDLED;
  }
---- a/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_ar8216.c
-+++ b/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_ar8216.c
-@@ -28,10 +28,7 @@
- int ag71xx_remove_ar8216_header(struct ag71xx *ag, struct sk_buff *skb,
- 				int pktlen)
- {
--	u8 type;
--
--	type = skb->data[1] & AR8216_PACKET_TYPE_MASK;
--	switch (type) {
-+	switch (skb->data[1] & AR8216_PACKET_TYPE_MASK) {
- 	case AR8216_PACKET_TYPE_NORMAL:
- 		break;
