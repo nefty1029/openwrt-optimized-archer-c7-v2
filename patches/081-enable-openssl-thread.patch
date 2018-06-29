@@ -1,8 +1,6 @@
-diff --git a/package/libs/openssl/Config.in b/package/libs/openssl/Config.in
-index dbcd11a..571db91 100644
 --- a/package/libs/openssl/Config.in
 +++ b/package/libs/openssl/Config.in
-@@ -50,6 +50,12 @@ config OPENSSL_ENGINE_DIGEST
+@@ -50,6 +50,12 @@
  	depends on OPENSSL_ENGINE_CRYPTO
  	prompt "Digests acceleration support"
  
@@ -15,11 +13,9 @@ index dbcd11a..571db91 100644
  config OPENSSL_HARDWARE_SUPPORT
  	bool
  	default n
-diff --git a/package/libs/openssl/Makefile b/package/libs/openssl/Makefile
-index 9b64302..1bc9e85 100644
 --- a/package/libs/openssl/Makefile
 +++ b/package/libs/openssl/Makefile
-@@ -34,6 +34,7 @@ PKG_CONFIG_DEPENDS:= \
+@@ -36,6 +36,7 @@
  	CONFIG_OPENSSL_WITH_EC2M \
  	CONFIG_OPENSSL_WITH_SSL3 \
  	CONFIG_OPENSSL_HARDWARE_SUPPORT \
@@ -27,7 +23,7 @@ index 9b64302..1bc9e85 100644
  	CONFIG_OPENSSL_WITH_DEPRECATED \
  	CONFIG_OPENSSL_WITH_DTLS \
  	CONFIG_OPENSSL_WITH_COMPRESSION \
-@@ -127,6 +128,12 @@ ifndef CONFIG_OPENSSL_HARDWARE_SUPPORT
+@@ -130,6 +131,12 @@
    OPENSSL_OPTIONS += no-hw
  endif
  

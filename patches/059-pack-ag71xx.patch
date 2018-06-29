@@ -1,13 +1,11 @@
-diff --git a/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h b/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
-index 898bde1..1c8c3d4 100644
 --- a/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
 +++ b/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
-@@ -156,7 +156,7 @@ struct ag71xx {
- 	struct napi_struct	napi;
- 	u32			msg_enable;
+@@ -176,7 +176,7 @@
+ 	 */
+ 	void __iomem		*mac_base;
  
 -	struct ag71xx_desc	*stop_desc;
 +	struct ag71xx_desc	*stop_desc __attribute__((aligned(4)));
  	dma_addr_t		stop_desc_dma;
  
- 	struct ag71xx_ring	rx_ring;
+ 	struct mii_bus		*mii_bus;

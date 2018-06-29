@@ -1,5 +1,3 @@
-diff --git a/target/linux/ar71xx/image/lzma-loader/src/Makefile b/target/linux/ar71xx/image/lzma-loader/src/Makefile
-index 5f10bdb..15932cc 100644
 --- a/target/linux/ar71xx/image/lzma-loader/src/Makefile
 +++ b/target/linux/ar71xx/image/lzma-loader/src/Makefile
 @@ -30,12 +30,12 @@ OBJDUMP		:= $(CROSS_COMPILE)objdump
@@ -17,5 +15,5 @@ index 5f10bdb..15932cc 100644
 +		  -mabi=32 -march=74kc -mno-branch-likely -mno-mips16 -mno-interlink-compressed -msym32 -fno-caller-saves -fomit-frame-pointer -mframe-header-opt \
 +		  -Wa,-32 -Wa,-march=74kc -mno-branch-likely -mno-mips16 -mno-interlink-compressed -msym32 -fno-caller-saves -fomit-frame-pointer -mframe-header-opt -Wa,-march=74kc -mno-branch-likely -mno-mips16 -mno-interlink-compressed -msym32 -fno-caller-saves -fomit-frame-pointer -mframe-header-opt -Wa,--trap
  CFLAGS		+= -D_LZMA_PROB32
+ CFLAGS		+= -flto
  
- ASFLAGS		= $(CFLAGS) -D__ASSEMBLY__

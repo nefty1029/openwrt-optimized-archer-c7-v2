@@ -8,6 +8,7 @@
 009-ar71xx-kernel-options.patch
 009-detach-rtl8366-smi-dependency.patch
 010-no-l2-cache-runtime-check.patch
+015-wireless-regdb.patch
 016-enable-wireless-default.patch
 017-harden-buildroot.patch
 040-gcc-final-toolchain-74kc-optimize.patch
@@ -15,6 +16,7 @@
 044-mips-musl-optimize.patch
 045-port-uclibcng-mips-memset-memcpy-optimize.patch
 059-ag71xx-DMA-unmap-FROM_DEVICE-no-op-for-our-arch.patch
+059-ag71xx-reorder-ring-struct.patch
 059-pack-ag71xx.patch
 059-remove-dma-no-op-from-ath9k.patch
 059-strip-even-more-debug-ar71xx.patch

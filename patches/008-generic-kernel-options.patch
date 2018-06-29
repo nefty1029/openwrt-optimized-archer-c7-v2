@@ -1,6 +1,6 @@
---- /dev/null	2017-11-06 13:13:12.071770370 +0100
-+++ ./target/linux/generic/config-4.9	2017-11-06 13:22:56.656791034 +0100
-@@ -106,7 +106,7 @@
+--- /dev/null
++++ ./target/linux/generic/config-4.9
+@@ -107,7 +107,7 @@
  # CONFIG_AHCI_IMX is not set
  # CONFIG_AHCI_MVEBU is not set
  # CONFIG_AHCI_QORIQ is not set
@@ -9,7 +9,7 @@
  # CONFIG_AIRO is not set
  # CONFIG_AIRO_CS is not set
  # CONFIG_AIX_PARTITION is not set
-@@ -641,7 +641,7 @@
+@@ -644,7 +644,7 @@
  # CONFIG_BT_RFCOMM is not set
  CONFIG_BT_RFCOMM_TTY=y
  # CONFIG_BT_SELFTEST is not set
@@ -18,14 +18,16 @@
  CONFIG_BUILDTIME_EXTABLE_SORT=y
  # CONFIG_BUILD_BIN2C is not set
  # CONFIG_C2PORT is not set
-@@ -679,10 +679,10 @@
+@@ -680,12 +680,12 @@
+ # CONFIG_CAVIUM_OCTEON_SOC is not set
+ # CONFIG_CB710_CORE is not set
  # CONFIG_CC10001_ADC is not set
 -# CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE is not set
 -CONFIG_CC_OPTIMIZE_FOR_SIZE=y
-+CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE=y
-+# CONFIG_CC_OPTIMIZE_FOR_SIZE is not set
 -# CONFIG_CC_STACKPROTECTOR is not set
 -CONFIG_CC_STACKPROTECTOR_NONE=y
++CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE=y
++# CONFIG_CC_OPTIMIZE_FOR_SIZE is not set
 +CONFIG_CC_STACKPROTECTOR=y
 +# CONFIG_CC_STACKPROTECTOR_NONE is not set
  # CONFIG_CC_STACKPROTECTOR_REGULAR is not set
@@ -34,7 +36,7 @@
  # CONFIG_CDROM_PKTCDVD is not set
  # CONFIG_CEPH_FS is not set
  # CONFIG_CEPH_LIB is not set
-@@ -955,7 +955,7 @@
+@@ -959,7 +959,7 @@
  # CONFIG_DEBUG_INFO_DWARF4 is not set
  CONFIG_DEBUG_INFO_REDUCED=y
  # CONFIG_DEBUG_INFO_SPLIT is not set
@@ -43,7 +45,7 @@
  # CONFIG_DEBUG_KMEMLEAK is not set
  # CONFIG_DEBUG_KOBJECT is not set
  # CONFIG_DEBUG_KOBJECT_RELEASE is not set
-@@ -1157,7 +1157,7 @@
+@@ -1161,7 +1161,7 @@
  CONFIG_EFI_PARTITION=y
  # CONFIG_EFS_FS is not set
  CONFIG_ELFCORE=y
@@ -52,7 +54,7 @@
  # CONFIG_EMAC_ROCKCHIP is not set
  CONFIG_EMBEDDED=y
  # CONFIG_EM_TIMER_STI is not set
-@@ -1446,8 +1446,8 @@
+@@ -1457,8 +1457,8 @@
  CONFIG_HAVE_KERNEL_LZMA=y
  CONFIG_HAVE_KERNEL_LZO=y
  CONFIG_HAVE_KERNEL_XZ=y
@@ -63,7 +65,7 @@
  CONFIG_HAVE_NMI=y
  # CONFIG_HCALL_STATS is not set
  # CONFIG_HDC100X is not set
-@@ -1595,14 +1595,14 @@
+@@ -1606,14 +1606,14 @@
  # CONFIG_HW_RANDOM_VIRTIO is not set
  # CONFIG_HYPERV is not set
  # CONFIG_HYSDN is not set
@@ -81,7 +83,7 @@
  # CONFIG_HZ_256 is not set
  # CONFIG_HZ_300 is not set
  # CONFIG_HZ_48 is not set
-@@ -1697,7 +1697,7 @@
+@@ -1708,7 +1708,7 @@
  # CONFIG_IBM_EMAC_ZMII is not set
  # CONFIG_ICPLUS_PHY is not set
  # CONFIG_ICS932S401 is not set
@@ -90,7 +92,7 @@
  # CONFIG_IDEAPAD_LAPTOP is not set
  # CONFIG_IDE_GD is not set
  # CONFIG_IDE_PROC_FS is not set
-@@ -2032,8 +2032,8 @@
+@@ -2043,8 +2043,8 @@
  # CONFIG_JME is not set
  CONFIG_JOLIET=y
  # CONFIG_JSA1212 is not set
@@ -101,7 +103,7 @@
  # CONFIG_KALLSYMS_ABSOLUTE_PERCPU is not set
  # CONFIG_KALLSYMS_ALL is not set
  CONFIG_KALLSYMS_BASE_RELATIVE=y
-@@ -2256,7 +2256,7 @@
+@@ -2268,7 +2268,7 @@
  # CONFIG_MAC_PARTITION is not set
  # CONFIG_MAG3110 is not set
  # CONFIG_MAGIC_SYSRQ is not set
@@ -110,7 +112,7 @@
  # CONFIG_MAGIC_SYSRQ_SERIAL is not set
  # CONFIG_MAILBOX is not set
  # CONFIG_MANDATORY_FILE_LOCKING is not set
-@@ -2956,7 +2956,8 @@
+@@ -2970,7 +2970,8 @@
  # CONFIG_NFT_BRIDGE_REJECT is not set
  # CONFIG_NFT_DUP_IPV4 is not set
  # CONFIG_NFT_DUP_IPV6 is not set
@@ -118,9 +120,9 @@
 +CONFIG_NF_CONNTRACK=y
 +CONFIG_NF_CONNTRACK_RTCACHE=y
  # CONFIG_NF_CONNTRACK_AMANDA is not set
+ # CONFIG_NF_CONNTRACK_CHAIN_EVENTS is not set
  # CONFIG_NF_CONNTRACK_EVENTS is not set
- # CONFIG_NF_CONNTRACK_FTP is not set
-@@ -2982,12 +2983,12 @@
+@@ -2997,12 +2998,12 @@
  # CONFIG_NF_CT_PROTO_GRE is not set
  # CONFIG_NF_CT_PROTO_SCTP is not set
  # CONFIG_NF_CT_PROTO_UDPLITE is not set
@@ -135,7 +137,7 @@
  # CONFIG_NF_NAT_AMANDA is not set
  # CONFIG_NF_NAT_FTP is not set
  # CONFIG_NF_NAT_H323 is not set
-@@ -3344,7 +3345,7 @@
+@@ -3359,7 +3360,7 @@
  # CONFIG_PRISM54 is not set
  # CONFIG_PROC_CHILDREN is not set
  CONFIG_PROC_FS=y
@@ -144,7 +146,7 @@
  # CONFIG_PROC_PAGE_MONITOR is not set
  CONFIG_PROC_STRIPPED=y
  CONFIG_PROC_SYSCTL=y
-@@ -3423,7 +3424,7 @@
+@@ -3438,7 +3439,7 @@
  # CONFIG_RCU_NOCB_CPU is not set
  # CONFIG_RCU_PERF_TEST is not set
  # CONFIG_RCU_TORTURE_TEST is not set
@@ -153,7 +155,7 @@
  # CONFIG_RCU_TRACE is not set
  # CONFIG_RC_ATI_REMOTE is not set
  # CONFIG_RC_CORE is not set
-@@ -5245,7 +5246,7 @@
+@@ -5262,7 +5263,7 @@
  # CONFIG_WLCORE is not set
  # CONFIG_WL_MEDIATEK is not set
  CONFIG_WL_TI=y

@@ -1,6 +1,6 @@
 --- a/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
 +++ b/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-@@ -250,19 +250,18 @@ static int ag71xx_ring_rx_init(struct ag
+@@ -211,19 +211,18 @@
  	int ring_size = BIT(ring->order);
  	int ring_mask = BIT(ring->order) - 1;
  	unsigned int i;
@@ -23,7 +23,7 @@
  
  	for (i = 0; i < ring_size; i++) {
  		struct ag71xx_desc *desc = ag71xx_ring_desc(ring, i);
-@@ -289,10 +288,9 @@ static int ag71xx_ring_rx_refill(struct
+@@ -250,10 +249,9 @@
  {
  	struct ag71xx_ring *ring = &ag->rx_ring;
  	int ring_mask = BIT(ring->order) - 1;
@@ -35,7 +35,7 @@
  	for (; ring->curr - ring->dirty > 0; ring->dirty++) {
  		struct ag71xx_desc *desc;
  		unsigned int i;
-@@ -297,7 +295,7 @@ static int ag71xx_ring_rx_refill(struct
+@@ -273,7 +271,7 @@
  	/* flush descriptors */
  	wmb();
  
@@ -44,7 +44,7 @@
  
  	return count;
  }
-@@ -610,7 +608,7 @@ void ag71xx_link_adjust(struct ag71xx *a
+@@ -638,7 +636,7 @@
  			ag71xx_speed_str(ag),
  			(DUPLEX_FULL == ag->duplex) ? "Full" : "Half");
  
@@ -53,7 +53,7 @@
  		ag->dev->name,
  		ag71xx_rr(ag, AG71XX_REG_FIFO_CFG0),
  		ag71xx_rr(ag, AG71XX_REG_FIFO_CFG1),
-@@ -625,7 +623,7 @@ void ag71xx_link_adjust(struct ag71xx *a
+@@ -653,7 +651,7 @@
  	DBG("%s: mac_cfg2=%#x, mac_ifctl=%#x\n",
  		ag->dev->name,
  		ag71xx_rr(ag, AG71XX_REG_MAC_CFG2),
@@ -61,8 +61,8 @@
 +		ag71xx_rr(ag, AG71XX_REG_MAC_IFCTL));*/
  }
  
- static int ag71xx_open(struct net_device *dev)
-@@ -747,7 +745,7 @@ static netdev_tx_t ag71xx_hard_start_xmi
+ void ag71xx_link_adjust(struct ag71xx *ag)
+@@ -798,7 +796,7 @@
  		ag71xx_add_ar8216_header(ag, skb);
  
  	if (skb->len <= 4) {
@@ -71,7 +71,7 @@
  		goto err_drop;
  	}
  
-@@ -816,11 +814,11 @@ static netdev_tx_t ag71xx_hard_start_xmi
+@@ -832,11 +830,11 @@
  	    ring_min *= AG71XX_TX_RING_DS_PER_PKT;
  
  	if (ring->curr - ring->dirty >= ring_size - ring_min) {
@@ -85,7 +85,7 @@
  
  	/* enable TX engine */
  	ag71xx_wr(ag, AG71XX_REG_TX_CTRL, TX_CTRL_TXE);
-@@ -902,7 +900,7 @@ static int ag71xx_tx_packets(struct ag71
+@@ -961,7 +959,7 @@
  	int bytes_compl = 0;
  	int n = 0;
  
@@ -93,18 +93,18 @@
 +//	DBG("%s: processing TX ring\n", ag->dev->name);
  
  	while (ring->dirty + n != ring->curr) {
- 		unsigned int i = (ring->dirty + n) % ring->size;
-@@ -934,7 +932,7 @@ static int ag71xx_tx_packets(struct ag71
+ 		unsigned int i = (ring->dirty + n) & ring_mask;
+@@ -998,7 +996,7 @@
  		}
  	}
  
 -	DBG("%s: %d packets sent out\n", ag->dev->name, sent);
 +//	DBG("%s: %d packets sent out\n", ag->dev->name, sent);
  
- 	ag->dev->stats.tx_bytes += bytes_compl;
- 	ag->dev->stats.tx_packets += sent;
-@@ -957,8 +955,8 @@ static int ag71xx_rx_packets(struct ag71
- 	unsigned int pktlen_mask = ag->desc_pktlen_mask;
+ 	if (!sent)
+ 		return 0;
+@@ -1028,8 +1026,8 @@
+ 	struct sk_buff *skb;
  	int done = 0;
  
 -	DBG("%s: rx packets, limit=%d, curr=%u, dirty=%u\n",
@@ -112,11 +112,11 @@
 +//	DBG("%s: rx packets, limit=%d, curr=%u, dirty=%u\n",
 +//			dev->name, limit, ring->curr, ring->dirty);
  
- 	while (done < limit) {
- 		unsigned int i = ring->curr % ring->size;
-@@ -1014,8 +1012,8 @@ next:
+ 	skb_queue_head_init(&queue);
  
- 	ag71xx_ring_rx_refill(ag);
+@@ -1093,8 +1091,8 @@
+ 		netif_receive_skb(skb);
+ 	}
  
 -	DBG("%s: rx finish, curr=%u, dirty=%u, done=%d\n",
 -		dev->name, ring->curr, ring->dirty, done);
@@ -125,7 +125,7 @@
  
  	return done;
  }
-@@ -1034,7 +1032,7 @@ static int ag71xx_poll(struct napi_struc
+@@ -1114,7 +1112,7 @@
  	pdata->ddr_flush();
  	tx_done = ag71xx_tx_packets(ag, false);
  
@@ -134,7 +134,7 @@
  	rx_done = ag71xx_rx_packets(ag, limit);
  
  	ag71xx_debugfs_update_napi_stats(ag, rx_done, tx_done);
-@@ -1060,8 +1058,8 @@ static int ag71xx_poll(struct napi_struc
+@@ -1139,8 +1137,8 @@
  		if (status & TX_STATUS_PS)
  			goto more;
  
@@ -145,7 +145,7 @@
  
  		napi_complete(napi);
  
-@@ -1073,8 +1071,8 @@ static int ag71xx_poll(struct napi_struc
+@@ -1152,8 +1150,8 @@
  	}
  
  more:
@@ -156,7 +156,7 @@
  	return limit;
  
  oom:
-@@ -1111,7 +1109,7 @@ static irqreturn_t ag71xx_interrupt(int
+@@ -1190,7 +1188,7 @@
  
  	if (likely(status & AG71XX_INT_POLL)) {
  		ag71xx_int_disable(ag, AG71XX_INT_POLL);
@@ -164,4 +164,4 @@
 +//		DBG("%s: enable polling mode\n", dev->name);
  		napi_schedule(&ag->napi);
  	}
-
+ 

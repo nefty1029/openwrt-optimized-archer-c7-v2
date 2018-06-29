@@ -1,0 +1,38 @@
+From 25db38a65568d13b5ef070b29dc13bde137d4d6d Mon Sep 17 00:00:00 2001
+From: Rosen Penev <rosenp@gmail.com>
+Date: Wed, 27 Jun 2018 17:02:36 -0700
+Subject: [PATCH] ag71xx: Reorder ring struct for lower cache thrashing.
+
+Based on Qualcomm's upstream code. Reordered a bit different.
+
+iperf3 speed goes from ~279mbps to ~320mbps on an Archer C7v4.
+
+Signed-off-by: Rosen Penev <rosenp@gmail.com>
+---
+ .../drivers/net/ethernet/atheros/ag71xx/ag71xx.h    | 13 ++++++++-----
+ 1 file changed, 8 insertions(+), 5 deletions(-)
+
+--- a/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
++++ b/target/linux/ar71xx/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
+@@ -105,13 +105,16 @@
+ };
+ 
+ struct ag71xx_ring {
+-	struct ag71xx_buf	*buf;
+-	u8			*descs_cpu;
+-	dma_addr_t		descs_dma;
+-	u16			desc_split;
+-	u16			order;
++	/* "Hot" fields in the data path. */
+ 	unsigned int		curr;
+ 	unsigned int		dirty;
++
++	/* "Cold" fields - not used in the data path. */
++	struct ag71xx_buf	*buf;
++	u16			order;
++	u16			desc_split;
++	dma_addr_t		descs_dma;
++	u8			*descs_cpu;
+ };
+ 
+ struct ag71xx_mdio {
