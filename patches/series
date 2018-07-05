@@ -26,5 +26,7 @@
 064-luci-wifi-add-feature.patch
 081-enable-openssl-thread.patch
 081-modify-libnl-tiny-cflag.patch
+099-enable-flow-offloading.patch
+099-uhttpd-config.patch
 222-funit-at-a-time.patch
 812-enable-bbr-congestion-control.patch

@@ -1,0 +1,23 @@
+--- a/package/network/services/uhttpd/files/uhttpd.config
++++ b/package/network/services/uhttpd/files/uhttpd.config
+@@ -10,7 +10,7 @@
+ 	list listen_https	[::]:443
+ 
+ 	# Redirect HTTP requests to HTTPS if possible
+-	option redirect_https	1
++	option redirect_https	0
+ 
+ 	# Server document root
+ 	option home		/www
+@@ -46,8 +46,9 @@
+ 	# Files with an associated interpreter can
+ 	# be called outside of the CGI prefix and do
+ 	# not need to be executable.
+-#	list interpreter	".php=/usr/bin/php-cgi"
+-#	list interpreter	".cgi=/usr/bin/perl"
++	list interpreter	'.php=/usr/bin/php-cgi'
++#	list interpreter	'.cgi=/usr/bin/perl'
++	list index_page		'index.html index.htm default.html default.htm index.php'
+ 
+ 	# Lua url prefix and handler script.
+ 	# Lua support is disabled if no prefix given.
