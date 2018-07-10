@@ -1,6 +1,6 @@
 --- a/target/linux/ath79/config-4.14
 +++ b/target/linux/ath79/config-4.14
-@@ -238,3 +238,6 @@
+@@ -230,3 +230,6 @@
  CONFIG_TINY_SRCU=y
  CONFIG_USB_SUPPORT=y
  CONFIG_USE_OF=y
