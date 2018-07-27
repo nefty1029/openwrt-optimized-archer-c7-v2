@@ -1,6 +1,6 @@
 aca322688af653c47e4b3a4971c6b2bb1d0f77d860f91f27a5930fa2c42e861b *config.seed
-673315f7cb86b547c1846dc038ccadd722fcc604e8beef4ed4669ae096846f9e *openwrt-ath79-generic-device-tl-archer-c7-v2.manifest
-e5e107a10057a8e472f25ea49f8ae4b65daaa81ab041ea05b3de59c5b1506484 *openwrt-ath79-generic-tl-archer-c7-v2-squashfs-factory-eu.bin
-9dcbcd49ab3cf190ef4c2b8054862621b181dfa7584ac4a28758963aa0ca0308 *openwrt-ath79-generic-tl-archer-c7-v2-squashfs-factory-us.bin
-f36faffbc6b65bb1f14c0359c3f332d6691c83f9120402733a8853e8a8f69357 *openwrt-ath79-generic-tl-archer-c7-v2-squashfs-factory.bin
-877b57fc8405ad0d6bb207efb1047f74c5697fc492db99d34667022e3882e366 *openwrt-ath79-generic-tl-archer-c7-v2-squashfs-sysupgrade.bin
+85a6fd17cbd2ff768b59b9b88a57af46c730ef40d456cbb8f802d33de0488405 *openwrt-ath79-generic-device-tl-archer-c7-v2.manifest
+6d5d6567c5eb65355bac014fa49ab17376e18275fee964053370c57945843772 *openwrt-ath79-generic-tl-archer-c7-v2-squashfs-factory-eu.bin
+eeab5854b7245ad815ce4e64272d4d963777dfa7576dd78f0f93e90b0d895b2a *openwrt-ath79-generic-tl-archer-c7-v2-squashfs-factory-us.bin
+1d461f9f6d8ad4840331d582d2b61a808e2b77e4e6163d025a77f50c7aa82d11 *openwrt-ath79-generic-tl-archer-c7-v2-squashfs-factory.bin
+3d061a9455cae65ac73b51fd8a8c08d7eb72d9a8b8d367ba46ffdf05b9aebcc7 *openwrt-ath79-generic-tl-archer-c7-v2-squashfs-sysupgrade.bin
