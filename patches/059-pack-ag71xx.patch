@@ -1,11 +1,11 @@
 --- a/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
 +++ b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx.h
-@@ -172,7 +172,7 @@
+@@ -171,7 +174,7 @@
+ 	void __iomem		*mac_base;
  	void __iomem		*mii_base;
- 	struct regmap		*mii_regmap;
  
 -	struct ag71xx_desc	*stop_desc;
 +	struct ag71xx_desc	*stop_desc __attribute__((aligned(4)));
  	dma_addr_t		stop_desc_dma;
  
- 	struct mii_bus		*mii_bus;
+ 	struct phy_device	*phy_dev;

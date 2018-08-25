@@ -1,6 +1,6 @@
 --- a/include/target.mk
 +++ b/include/target.mk
-@@ -163,18 +163,21 @@ LINUX_RECONF_DIFF = $(call __linux_confcmd,$(filter-out $(LINUX_RECONFIG_TARGET)
+@@ -162,18 +162,21 @@
  ifeq ($(DUMP),1)
    BuildTarget=$(BuildTargets/DumpCurrent)
  
@@ -23,6 +23,6 @@
 +    CPU_CFLAGS_34kc = -march=34kc
 +    CPU_CFLAGS_74kc = -march=74kc
 +    CPU_CFLAGS_1004kc = -march=1004kc
-     CPU_CFLAGS_octeon = -march=octeon -mabi=64
      CPU_CFLAGS_octeonplus = -march=octeon+ -mabi=64
    endif
+   ifeq ($(ARCH),i386)

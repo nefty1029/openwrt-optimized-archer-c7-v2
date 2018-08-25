@@ -19,5 +19,5 @@
 +#	list interpreter	'.cgi=/usr/bin/perl'
 +	list index_page		'index.html index.htm default.html default.htm index.php'
  
- 	# Lua url prefix and handler script.
- 	# Lua support is disabled if no prefix given.
+ 	# List of prefix->Lua handler mappings.
+ 	# Any request to an URL beneath the prefix
