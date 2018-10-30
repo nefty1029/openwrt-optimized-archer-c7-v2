@@ -43,7 +43,7 @@
  
  	return count;
  }
-@@ -653,7 +651,7 @@
+@@ -707,7 +705,7 @@
  			ag71xx_speed_str(ag),
  			(DUPLEX_FULL == ag->duplex) ? "Full" : "Half");
  
@@ -52,7 +52,7 @@
  		ag->dev->name,
  		ag71xx_rr(ag, AG71XX_REG_FIFO_CFG0),
  		ag71xx_rr(ag, AG71XX_REG_FIFO_CFG1),
-@@ -668,7 +666,7 @@
+@@ -722,7 +720,7 @@
  	DBG("%s: mac_cfg2=%#x, mac_ifctl=%#x\n",
  		ag->dev->name,
  		ag71xx_rr(ag, AG71XX_REG_MAC_CFG2),
@@ -61,7 +61,7 @@
  }
  
  void ag71xx_link_adjust(struct ag71xx *ag)
-@@ -810,7 +808,7 @@
+@@ -864,7 +862,7 @@
  	int i, n, ring_min;
  
  	if (skb->len <= 4) {
@@ -70,7 +70,7 @@
  		goto err_drop;
  	}
  
-@@ -844,11 +842,11 @@
+@@ -898,11 +896,11 @@
  	    ring_min *= AG71XX_TX_RING_DS_PER_PKT;
  
  	if (ring->curr - ring->dirty >= ring_size - ring_min) {
@@ -84,7 +84,7 @@
  
  	/* enable TX engine */
  	ag71xx_wr(ag, AG71XX_REG_TX_CTRL, TX_CTRL_TXE);
-@@ -972,7 +970,7 @@
+@@ -1026,7 +1024,7 @@
  	int bytes_compl = 0;
  	int n = 0;
  
@@ -93,7 +93,7 @@
  
  	while (ring->dirty + n != ring->curr) {
  		unsigned int i = (ring->dirty + n) & ring_mask;
-@@ -1009,7 +1007,7 @@
+@@ -1063,7 +1061,7 @@
  		}
  	}
  
@@ -102,7 +102,7 @@
  
  	if (!sent)
  		return 0;
-@@ -1039,8 +1037,8 @@
+@@ -1093,8 +1091,8 @@
  	struct sk_buff *skb;
  	int done = 0;
  
@@ -113,7 +113,7 @@
  
  	skb_queue_head_init(&queue);
  
-@@ -1101,8 +1099,8 @@
+@@ -1155,8 +1153,8 @@
  		netif_receive_skb(skb);
  	}
  
@@ -124,7 +124,7 @@
  
  	return done;
  }
-@@ -1120,7 +1118,7 @@
+@@ -1174,7 +1172,7 @@
  
  	tx_done = ag71xx_tx_packets(ag, false);
  
@@ -133,7 +133,7 @@
  	rx_done = ag71xx_rx_packets(ag, limit);
  
  	ag71xx_debugfs_update_napi_stats(ag, rx_done, tx_done);
-@@ -1145,8 +1143,8 @@
+@@ -1199,8 +1197,8 @@
  		if (status & TX_STATUS_PS)
  			goto more;
  
@@ -144,7 +144,7 @@
  
  		napi_complete(napi);
  
-@@ -1158,8 +1156,8 @@
+@@ -1212,8 +1210,8 @@
  	}
  
  more:
@@ -155,7 +155,7 @@
  	return limit;
  
  oom:
-@@ -1196,7 +1194,7 @@
+@@ -1250,7 +1248,7 @@
  
  	if (likely(status & AG71XX_INT_POLL)) {
  		ag71xx_int_disable(ag, AG71XX_INT_POLL);

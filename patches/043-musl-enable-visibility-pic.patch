@@ -1,13 +1,12 @@
 --- a/toolchain/musl/common.mk
 +++ b/toolchain/musl/common.mk
-@@ -36,8 +36,9 @@ MUSL_CONFIGURE:= \
- 		--prefix=/ \
+@@ -39,7 +39,8 @@
  		--host=$(GNU_HOST_NAME) \
  		--target=$(REAL_GNU_TARGET_NAME) \
-+		--enable-visibility \
  		--disable-gcc-wrapper \
--		--enable-debug
-+		--disable-debug
+-		--enable-debug \
++		--disable-debug \
++		--enable-visibility \
+ 		--enable-optimize
  
  define Host/Configure
- 	ln -snf $(PKG_NAME)-$(PKG_VERSION) $(BUILD_DIR_TOOLCHAIN)/$(PKG_NAME)

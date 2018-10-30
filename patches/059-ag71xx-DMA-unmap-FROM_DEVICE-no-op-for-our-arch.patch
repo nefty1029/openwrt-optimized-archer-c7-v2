@@ -9,7 +9,7 @@
  			skb_free_frag(ring->buf[i].rx_buf);
  		}
  }
-@@ -823,7 +821,7 @@
+@@ -877,7 +875,7 @@
  	/* setup descriptor fields */
  	n = ag71xx_fill_dma_desc(ring, (u32) dma_addr, skb->len & ag->desc_pktlen_mask);
  	if (n < 0)
@@ -18,7 +18,7 @@
  
  	i = (ring->curr + n - 1) & ring_mask;
  	ring->buf[i].len = skb->len;
-@@ -855,9 +853,6 @@
+@@ -909,9 +907,6 @@
  
  	return NETDEV_TX_OK;
  
@@ -28,7 +28,7 @@
  err_drop:
  	dev->stats.tx_dropped++;
  
-@@ -1063,9 +1058,6 @@
+@@ -1117,9 +1112,6 @@
  		pktlen = desc->ctrl & pktlen_mask;
  		pktlen -= ETH_FCS_LEN;
  
