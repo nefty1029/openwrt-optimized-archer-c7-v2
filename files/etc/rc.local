@@ -8,7 +8,4 @@
 # Enable ath9k dynack
 iw phy1 set distance auto
 
-# Scan with 5G radio to fix signal icons in luci
-iw wlan0 scan &>/dev/null
-
 exit 0
