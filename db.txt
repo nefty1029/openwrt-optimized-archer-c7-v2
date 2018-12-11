@@ -1,7 +1,7 @@
 # This is the world regulatory domain
 country 00:
-	(2400 - 2494 @ 40), (30)
-	(5030 - 5850 @ 160), (30)
+	(2400 - 2494 @ 40), (33)
+	(4910 - 5865 @ 160), (33), AUTO-BW
 	(57000 - 66000 @ 2160), (43)
 
 
@@ -337,13 +337,6 @@ country CZ: DFS-ETSI
 # Funkanwendungen zur breitbandigen Datenübertragung, WAS/WLAN („Wireless
 # Access Systems including Wireless Local Area Networks“).
 # https://www.bundesnetzagentur.de/SharedDocs/Downloads/DE/Sachgebiete/Telekommunikation/Unternehmen_Institutionen/Frequenzen/Allgemeinzuteilungen/2010_07_WLAN_5GHz_pdf.pdf
-# The values for the 5 GHz have been reduced by a factor of 2 (3db) for non TPC
-# devices (in other words: devices with TPC can use twice the tx power of this
-# table). Note that the docs do not require TPC for 5150--5250; the reduction
-# to 100mW thus is not strictly required -- however the conservative 100mW
-# limit is used here as the non-interference with radar and satellite
-# apps relies on the attenuation by the building walls only in the
-# absence of DFS; the neighbour countries have 100mW limit here as well.
 #
 # The ETSI EN 300 440-1 standard for short range devices in the 5 GHz band has
 # been implemented in Germany:
@@ -1260,8 +1253,8 @@ country UG: DFS-FCC
 country US: DFS-FCC
 	(2402 - 2472 @ 40), (30)
 	(5170 - 5250 @ 80), (30), AUTO-BW
-	(5250 - 5330 @ 80), (30), DFS, AUTO-BW
-	(5490 - 5730 @ 160), (30), DFS
+	(5250 - 5330 @ 80), (30), AUTO-BW
+	(5490 - 5730 @ 160), (30)
 	(5735 - 5835 @ 80), (30)
 	# 60g band
 	# reference: http://cfr.regstoday.com/47cfr15.aspx#47_CFR_15p255

@@ -4,21 +4,21 @@
  local netmod = luci.model.network
  
  local _, p
--for _, p in ipairs({"ppp", "pptp", "pppoe", "pppoa", "3g", "l2tp", "pppossh"}) do
-+for _, p in ipairs({"ppp", "pptp", "pppoe", "3g", "l2tp", "pppossh"}) do
+-for _, p in ipairs({"ppp", "pptp", "pppoe", "pppoa", "l2tp"}) do
++for _, p in ipairs({"ppp", "pptp", "pppoe", "l2tp"}) do
  
  	local proto = netmod:register_protocol(p)
  
-@@ -17,8 +17,6 @@ for _, p in ipairs({"ppp", "pptp", "pppo
- 			return luci.i18n.translate("UMTS/GPRS/EV-DO")
+@@ -15,8 +15,6 @@
+ 			return luci.i18n.translate("PPtP")
  		elseif p == "pppoe" then
  			return luci.i18n.translate("PPPoE")
 -		elseif p == "pppoa" then
 -			return luci.i18n.translate("PPPoATM")
  		elseif p == "l2tp" then
  			return luci.i18n.translate("L2TP")
- 		elseif p == "pppossh" then
-@@ -39,8 +37,6 @@ for _, p in ipairs({"ppp", "pptp", "pppo
+ 		end
+@@ -33,17 +31,13 @@
  			return "ppp-mod-pptp"
  		elseif p == "pppoe" then
  			return "ppp-mod-pppoe"
@@ -26,8 +26,7 @@
 -			return "ppp-mod-pppoa"
  		elseif p == "l2tp" then
  			return "xl2tpd"
- 		elseif p == "pppossh" then
-@@ -49,9 +45,7 @@ for _, p in ipairs({"ppp", "pptp", "pppo
+ 		end
  	end
  
  	function proto.is_installed(self)

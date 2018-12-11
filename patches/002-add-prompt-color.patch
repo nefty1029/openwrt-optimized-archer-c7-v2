@@ -1,0 +1,11 @@
+--- a/package/base-files/files/etc/profile
++++ b/package/base-files/files/etc/profile
+@@ -12,7 +12,7 @@
+ export PATH="%PATH%"
+ export HOME=$(grep -e "^${USER:-root}:" /etc/passwd | cut -d ":" -f 6)
+ export HOME=${HOME:-/root}
+-export PS1='\u@\h:\w\$ '
++export PS1='\[\e[1;32m\][\[\e[1;37m\]\u@\h \[\e[1;35m\]\w\[\e[1;32m\]]\[\e[1;31m\]\\$\[\e[m\] '
+ 
+ case "$TERM" in
+ 	xterm*|rxvt*)
