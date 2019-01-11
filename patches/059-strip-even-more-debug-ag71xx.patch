@@ -1,6 +1,24 @@
 --- a/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
 +++ b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-@@ -173,18 +173,17 @@
+@@ -56,7 +56,7 @@
+ 		ag71xx_rr(ag, AG71XX_REG_RX_STATUS));
+ }
+ 
+-static void ag71xx_dump_regs(struct ag71xx *ag)
++/*static void ag71xx_dump_regs(struct ag71xx *ag)
+ {
+ 	DBG("%s: mac_cfg1=%08x, mac_cfg2=%08x, ipg=%08x, hdx=%08x, mfl=%08x\n",
+ 		ag->dev->name,
+@@ -80,7 +80,7 @@
+ 		ag71xx_rr(ag, AG71XX_REG_FIFO_CFG3),
+ 		ag71xx_rr(ag, AG71XX_REG_FIFO_CFG4),
+ 		ag71xx_rr(ag, AG71XX_REG_FIFO_CFG5));
+-}
++}*/
+ 
+ static inline void ag71xx_dump_intr(struct ag71xx *ag, char *label, u32 intr)
+ {
+@@ -199,18 +199,17 @@
  	int ring_size = BIT(ring->order);
  	int ring_mask = BIT(ring->order) - 1;
  	unsigned int i;
@@ -22,7 +40,7 @@
  
  	for (i = 0; i < ring_size; i++) {
  		struct ag71xx_desc *desc = ag71xx_ring_desc(ring, i);
-@@ -211,10 +210,9 @@
+@@ -237,10 +236,9 @@
  {
  	struct ag71xx_ring *ring = &ag->rx_ring;
  	int ring_mask = BIT(ring->order) - 1;
@@ -34,7 +52,7 @@
  	for (; ring->curr - ring->dirty > 0; ring->dirty++) {
  		struct ag71xx_desc *desc;
  		unsigned int i;
-@@ -234,7 +232,7 @@
+@@ -260,7 +258,7 @@
  	/* flush descriptors */
  	wmb();
  
@@ -43,124 +61,28 @@
  
  	return count;
  }
-@@ -707,7 +705,7 @@
+@@ -733,7 +731,7 @@
  			ag71xx_speed_str(ag),
  			(DUPLEX_FULL == ag->duplex) ? "Full" : "Half");
  
--	DBG("%s: fifo_cfg0=%#x, fifo_cfg1=%#x, fifo_cfg2=%#x\n",
-+/*	DBG("%s: fifo_cfg0=%#x, fifo_cfg1=%#x, fifo_cfg2=%#x\n",
- 		ag->dev->name,
- 		ag71xx_rr(ag, AG71XX_REG_FIFO_CFG0),
- 		ag71xx_rr(ag, AG71XX_REG_FIFO_CFG1),
-@@ -722,7 +720,7 @@
- 	DBG("%s: mac_cfg2=%#x, mac_ifctl=%#x\n",
- 		ag->dev->name,
- 		ag71xx_rr(ag, AG71XX_REG_MAC_CFG2),
--		ag71xx_rr(ag, AG71XX_REG_MAC_IFCTL));
-+		ag71xx_rr(ag, AG71XX_REG_MAC_IFCTL));*/
+-	ag71xx_dump_regs(ag);
++//	ag71xx_dump_regs(ag);
  }
  
  void ag71xx_link_adjust(struct ag71xx *ag)
-@@ -864,7 +862,7 @@
- 	int i, n, ring_min;
+@@ -1508,13 +1506,13 @@
  
- 	if (skb->len <= 4) {
--		DBG("%s: packet len is too small\n", ag->dev->name);
-+//		DBG("%s: packet len is too small\n", ag->dev->name);
- 		goto err_drop;
- 	}
+ 	netif_napi_add(dev, &ag->napi, ag71xx_poll, AG71XX_NAPI_WEIGHT);
  
-@@ -898,11 +896,11 @@
- 	    ring_min *= AG71XX_TX_RING_DS_PER_PKT;
+-	ag71xx_dump_regs(ag);
++//	ag71xx_dump_regs(ag);
  
- 	if (ring->curr - ring->dirty >= ring_size - ring_min) {
--		DBG("%s: tx queue full\n", dev->name);
-+//		DBG("%s: tx queue full\n", dev->name);
- 		netif_stop_queue(dev);
- 	}
+ 	ag71xx_wr(ag, AG71XX_REG_MAC_CFG1, 0);
  
--	DBG("%s: packet injected into TX queue\n", ag->dev->name);
-+//	DBG("%s: packet injected into TX queue\n", ag->dev->name);
+ 	ag71xx_hw_init(ag);
  
- 	/* enable TX engine */
- 	ag71xx_wr(ag, AG71XX_REG_TX_CTRL, TX_CTRL_TXE);
-@@ -1026,7 +1024,7 @@
- 	int bytes_compl = 0;
- 	int n = 0;
+-	ag71xx_dump_regs(ag);
++//	ag71xx_dump_regs(ag);
  
--	DBG("%s: processing TX ring\n", ag->dev->name);
-+//	DBG("%s: processing TX ring\n", ag->dev->name);
- 
- 	while (ring->dirty + n != ring->curr) {
- 		unsigned int i = (ring->dirty + n) & ring_mask;
-@@ -1063,7 +1061,7 @@
- 		}
- 	}
- 
--	DBG("%s: %d packets sent out\n", ag->dev->name, sent);
-+//	DBG("%s: %d packets sent out\n", ag->dev->name, sent);
- 
- 	if (!sent)
- 		return 0;
-@@ -1093,8 +1091,8 @@
- 	struct sk_buff *skb;
- 	int done = 0;
- 
--	DBG("%s: rx packets, limit=%d, curr=%u, dirty=%u\n",
--			dev->name, limit, ring->curr, ring->dirty);
-+//	DBG("%s: rx packets, limit=%d, curr=%u, dirty=%u\n",
-+//			dev->name, limit, ring->curr, ring->dirty);
- 
- 	skb_queue_head_init(&queue);
- 
-@@ -1155,8 +1153,8 @@
- 		netif_receive_skb(skb);
- 	}
- 
--	DBG("%s: rx finish, curr=%u, dirty=%u, done=%d\n",
--		dev->name, ring->curr, ring->dirty, done);
-+//	DBG("%s: rx finish, curr=%u, dirty=%u, done=%d\n",
-+//		dev->name, ring->curr, ring->dirty, done);
- 
- 	return done;
- }
-@@ -1174,7 +1172,7 @@
- 
- 	tx_done = ag71xx_tx_packets(ag, false);
- 
--	DBG("%s: processing RX ring\n", dev->name);
-+//	DBG("%s: processing RX ring\n", dev->name);
- 	rx_done = ag71xx_rx_packets(ag, limit);
- 
- 	ag71xx_debugfs_update_napi_stats(ag, rx_done, tx_done);
-@@ -1199,8 +1197,8 @@
- 		if (status & TX_STATUS_PS)
- 			goto more;
- 
--		DBG("%s: disable polling mode, rx=%d, tx=%d,limit=%d\n",
--			dev->name, rx_done, tx_done, limit);
-+//		DBG("%s: disable polling mode, rx=%d, tx=%d,limit=%d\n",
-+//			dev->name, rx_done, tx_done, limit);
- 
- 		napi_complete(napi);
- 
-@@ -1212,8 +1210,8 @@
- 	}
- 
- more:
--	DBG("%s: stay in polling mode, rx=%d, tx=%d, limit=%d\n",
--			dev->name, rx_done, tx_done, limit);
-+//	DBG("%s: stay in polling mode, rx=%d, tx=%d, limit=%d\n",
-+//			dev->name, rx_done, tx_done, limit);
- 	return limit;
- 
- oom:
-@@ -1250,7 +1248,7 @@
- 
- 	if (likely(status & AG71XX_INT_POLL)) {
- 		ag71xx_int_disable(ag, AG71XX_INT_POLL);
--		DBG("%s: enable polling mode\n", dev->name);
-+//		DBG("%s: enable polling mode\n", dev->name);
- 		napi_schedule(&ag->napi);
- 	}
- 
+ 	if (!of_device_is_compatible(np, "simple-mfd")) {
+ 		mdio_node = of_get_child_by_name(np, "mdio-bus");

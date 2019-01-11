@@ -1,6 +1,6 @@
 --- a/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
 +++ b/target/linux/ath79/files/drivers/net/ethernet/atheros/ag71xx/ag71xx_main.c
-@@ -136,8 +136,6 @@
+@@ -162,8 +162,6 @@
  
  	for (i = 0; i < ring_size; i++)
  		if (ring->buf[i].rx_buf) {
@@ -9,7 +9,7 @@
  			skb_free_frag(ring->buf[i].rx_buf);
  		}
  }
-@@ -877,7 +875,7 @@
+@@ -888,7 +886,7 @@
  	/* setup descriptor fields */
  	n = ag71xx_fill_dma_desc(ring, (u32) dma_addr, skb->len & ag->desc_pktlen_mask);
  	if (n < 0)
@@ -18,7 +18,7 @@
  
  	i = (ring->curr + n - 1) & ring_mask;
  	ring->buf[i].len = skb->len;
-@@ -909,9 +907,6 @@
+@@ -920,9 +918,6 @@
  
  	return NETDEV_TX_OK;
  
@@ -28,7 +28,7 @@
  err_drop:
  	dev->stats.tx_dropped++;
  
-@@ -1117,9 +1112,6 @@
+@@ -1128,9 +1123,6 @@
  		pktlen = desc->ctrl & pktlen_mask;
  		pktlen -= ETH_FCS_LEN;
  

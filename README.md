@@ -1,6 +1,5 @@
-This is a modified ath79 build of the [firmware](https://github.com/infinitnet/lede-ar71xx-optimized-archer-c7-v2) configured by r00t ([discussion](https://forum.openwrt.org/t/1382)) that includes various patches from [gwlim](https://github.com/gwlim/mips74k-ar71xx-lede-patch).
+This is a modified ath79 build of the [firmware](https://github.com/infinitnet/lede-ar71xx-optimized-archer-c7-v2) configured by r00t ([discussion](https://forum.openwrt.org/t/1382)) that includes various patches from [gwlim](https://github.com/gwlim/mips74k-ar71xx-lede-patch) with a lighter package selection.
 
-The package selection and configuration was partially intended for personal use and is overall lighter.
 A similar build for the Archer C2600 is available [here](https://github.com/shunjou/openwrt-optimized-archer-c2600).
 \
 \

@@ -1,15 +1,15 @@
---- a/feeds/luci/modules/luci-mod-status/luasrc/view/admin_status/index.htm
-+++ b/feeds/luci/modules/luci-mod-status/luasrc/view/admin_status/index.htm
-@@ -17,6 +17,8 @@
+--- a/feeds/luci/modules/luci-mod-status/luasrc/view/admin_status/index/10-system.htm
++++ b/feeds/luci/modules/luci-mod-status/luasrc/view/admin_status/index/10-system.htm
+@@ -6,6 +6,8 @@
  
- 	local sysinfo = luci.util.ubus("system", "info") or { }
+ <%
  	local boardinfo = luci.util.ubus("system", "board") or { }
 +	local cpuinfo = luci.sys.exec("cat /proc/cpuinfo") or { }
 +	local march = cpuinfo:match("cpu model\t+: ([^\n]+)") or { }
  	local unameinfo = nixio.uname() or { }
- 
- 	local meminfo = sysinfo.memory or {
-@@ -139,7 +141,8 @@
+ 	local ver = require "luci.version"
+ %>
+@@ -16,7 +18,8 @@
  	<div class="table" width="100%">
  		<div class="tr"><div class="td left" width="33%"><%:Hostname%></div><div class="td left"><%=luci.sys.hostname() or "?"%></div></div>
  		<div class="tr"><div class="td left" width="33%"><%:Model%></div><div class="td left"><%=pcdata(boardinfo.model or "?")%></div></div>

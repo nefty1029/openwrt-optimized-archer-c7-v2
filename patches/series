@@ -10,7 +10,6 @@
 010-no-l2-cache-runtime-check.patch
 015-wireless-regdb.patch
 016-enable-wireless-default.patch
-017-harden-buildroot.patch
 040-gcc-final-toolchain-74kc-optimize.patch
 043-musl-enable-visibility-pic.patch
 044-mips-musl-optimize.patch
