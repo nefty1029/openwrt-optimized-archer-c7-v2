@@ -1,0 +1,13 @@
+--- /dev/null
++++ b/./package/kernel/mac80211/patches/ath/950-ath10k_improve_tx_rate.patch
+@@ -0,0 +1,10 @@
++--- a/drivers/net/wireless/ath/ath10k/mac.c 
+++++ b/drivers/net/wireless/ath/ath10k/mac.c
++@@ -3360,6 +3360,8 @@
++ 	const struct ieee80211_hdr *hdr = (void *)skb->data;
++ 	__le16 fc = hdr->frame_control;
++ 
+++	skb_orphan(skb); 
+++
++ 	if (!vif || vif->type == NL80211_IFTYPE_MONITOR)
++ 		return ATH10K_HW_TXRX_RAW;

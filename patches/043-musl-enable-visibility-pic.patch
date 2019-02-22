@@ -1,6 +1,6 @@
 --- a/toolchain/musl/common.mk
 +++ b/toolchain/musl/common.mk
-@@ -39,7 +39,8 @@
+@@ -40,7 +40,8 @@
  		--host=$(GNU_HOST_NAME) \
  		--target=$(REAL_GNU_TARGET_NAME) \
  		--disable-gcc-wrapper \

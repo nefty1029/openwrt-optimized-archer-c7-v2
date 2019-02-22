@@ -14,7 +14,7 @@
  	beacon_int = s:taboption("advanced", Value, "beacon_int", translate("Beacon Interval"))
  	beacon_int.optional = true
  	beacon_int.placeholder = 100
-@@ -533,7 +540,7 @@
+@@ -541,7 +548,7 @@
  
  	disassoc_low_ack = s:taboption("advanced", Flag, "disassoc_low_ack", translate("Disassociate On Low Acknowledgement"),
  		translate("Allow AP mode to disconnect STAs based on low ACK condition"))

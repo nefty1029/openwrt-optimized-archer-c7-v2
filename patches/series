@@ -8,6 +8,8 @@
 008-remove-kernel-debug.patch
 009-ath79-kernel-options.patch
 010-no-l2-cache-runtime-check.patch
+014-ath10k-firmware.patch
+014-ath10k-improve-tx-rate.patch
 015-wireless-regdb.patch
 016-enable-wireless-default.patch
 040-gcc-final-toolchain-74kc-optimize.patch
@@ -22,7 +24,7 @@
 060-remove-debug-napi.patch
 061-remove-pppoa-luci.patch
 062-luci-vlan.patch
-063-add-luci-mips-processor-march.patch
+063-luci-add-mips-processor-march.patch
 064-luci-wifi-add-feature.patch
 081-enable-openssl-thread.patch
 081-modify-libnl-tiny-cflag.patch

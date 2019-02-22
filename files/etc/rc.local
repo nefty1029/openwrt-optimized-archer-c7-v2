@@ -1,11 +1,10 @@
 # Put your custom commands here that should be executed once
 # the system init finished. By default this file does nothing.
 
-# Disable nfsd by default
-/etc/init.d/nfsd disable
-/etc/init.d/nfsd stop &>/dev/null
-
 # Enable ath9k dynack
 iw phy1 set distance auto
+
+# Scan with 5GHz radio to fix signal icons in luci
+timeout 1 iwinfo wlan0 scan &
 
 exit 0
