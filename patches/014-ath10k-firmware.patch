@@ -5,7 +5,7 @@
  		$(1)/lib/firmware/ath10k/QCA988X/hw2.0/
  	$(INSTALL_DATA) \
 -		$(PKG_BUILD_DIR)/QCA988X/hw2.0/10.2.4-1.0/firmware-5.bin_10.2.4-1.0-00037 \
-+		$(PKG_BUILD_DIR)/QCA988X/hw2.0/10.2.4-1.0/firmware-5.bin_10.2.4-1.0-00043 \
++		$(PKG_BUILD_DIR)/QCA988X/hw2.0/10.2.4-1.0/firmware-5.bin_10.2.4-1.0-00045 \
  		$(1)/lib/firmware/ath10k/QCA988X/hw2.0/firmware-5.bin
  endef
  

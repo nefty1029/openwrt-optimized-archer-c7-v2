@@ -61,7 +61,7 @@
  
  	return count;
  }
-@@ -733,7 +731,7 @@
+@@ -737,7 +735,7 @@
  			ag71xx_speed_str(ag),
  			(DUPLEX_FULL == ag->duplex) ? "Full" : "Half");
  
@@ -70,7 +70,7 @@
  }
  
  void ag71xx_link_adjust(struct ag71xx *ag)
-@@ -1508,13 +1506,13 @@
+@@ -1497,13 +1495,13 @@
  
  	netif_napi_add(dev, &ag->napi, ag71xx_poll, AG71XX_NAPI_WEIGHT);
  
@@ -84,5 +84,5 @@
 -	ag71xx_dump_regs(ag);
 +//	ag71xx_dump_regs(ag);
  
- 	if (!of_device_is_compatible(np, "simple-mfd")) {
- 		mdio_node = of_get_child_by_name(np, "mdio-bus");
+ 	/*
+ 	 * populate current node to register mdio-bus as a subdevice.
