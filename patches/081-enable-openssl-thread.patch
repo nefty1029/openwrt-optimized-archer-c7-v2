@@ -15,7 +15,7 @@
  	default y if x86_64 || i386
 --- a/package/libs/openssl/Makefile
 +++ b/package/libs/openssl/Makefile
-@@ -38,6 +38,7 @@
+@@ -39,6 +39,7 @@
  	CONFIG_OPENSSL_NO_DEPRECATED \
  	CONFIG_OPENSSL_OPTIMIZE_SPEED \
  	CONFIG_OPENSSL_PREFER_CHACHA_OVER_GCM \
@@ -23,7 +23,7 @@
  	CONFIG_OPENSSL_WITH_ARIA \
  	CONFIG_OPENSSL_WITH_ASM \
  	CONFIG_OPENSSL_WITH_ASYNC \
-@@ -258,6 +259,12 @@
+@@ -259,6 +260,12 @@
    OPENSSL_OPTIONS += no-deprecated
  endif
  

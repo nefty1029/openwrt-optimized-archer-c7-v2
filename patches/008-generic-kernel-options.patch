@@ -9,7 +9,7 @@
  # CONFIG_AIRO is not set
  # CONFIG_AIRO_CS is not set
  # CONFIG_AIX_PARTITION is not set
-@@ -675,7 +675,7 @@
+@@ -676,7 +676,7 @@
  # CONFIG_BT_RFCOMM is not set
  CONFIG_BT_RFCOMM_TTY=y
  # CONFIG_BT_SELFTEST is not set
@@ -18,7 +18,7 @@
  # CONFIG_BUG_ON_DATA_CORRUPTION is not set
  CONFIG_BUILDTIME_EXTABLE_SORT=y
  # CONFIG_BUILD_BIN2C is not set
-@@ -721,9 +721,9 @@
+@@ -722,9 +722,9 @@
  # CONFIG_CCS811 is not set
  CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE=y
  # CONFIG_CC_OPTIMIZE_FOR_SIZE is not set
@@ -31,7 +31,7 @@
  # CONFIG_CC_STACKPROTECTOR_STRONG is not set
  # CONFIG_CDROM_PKTCDVD is not set
  # CONFIG_CEPH_FS is not set
-@@ -1026,7 +1026,7 @@
+@@ -1032,7 +1032,7 @@
  # CONFIG_DEBUG_INFO_DWARF4 is not set
  CONFIG_DEBUG_INFO_REDUCED=y
  # CONFIG_DEBUG_INFO_SPLIT is not set
@@ -40,7 +40,7 @@
  # CONFIG_DEBUG_KMEMLEAK is not set
  # CONFIG_DEBUG_KOBJECT is not set
  # CONFIG_DEBUG_KOBJECT_RELEASE is not set
-@@ -1270,7 +1270,7 @@
+@@ -1274,7 +1274,7 @@
  CONFIG_EFI_PARTITION=y
  # CONFIG_EFS_FS is not set
  CONFIG_ELFCORE=y
@@ -49,7 +49,7 @@
  # CONFIG_EMAC_ROCKCHIP is not set
  CONFIG_EMBEDDED=y
  # CONFIG_EM_TIMER_STI is not set
-@@ -1612,8 +1612,8 @@
+@@ -1617,8 +1617,8 @@
  CONFIG_HAVE_KERNEL_LZMA=y
  CONFIG_HAVE_KERNEL_LZO=y
  CONFIG_HAVE_KERNEL_XZ=y
@@ -60,7 +60,7 @@
  CONFIG_HAVE_NMI=y
  # CONFIG_HCALL_STATS is not set
  # CONFIG_HDC100X is not set
-@@ -1777,14 +1777,14 @@
+@@ -1783,14 +1783,14 @@
  # CONFIG_HYPERV is not set
  # CONFIG_HYPERV_TSCPAGE is not set
  # CONFIG_HYSDN is not set
@@ -78,7 +78,7 @@
  # CONFIG_HZ_256 is not set
  # CONFIG_HZ_300 is not set
  # CONFIG_HZ_48 is not set
-@@ -1884,7 +1884,7 @@
+@@ -1890,7 +1890,7 @@
  # CONFIG_IBM_EMAC_ZMII is not set
  # CONFIG_ICPLUS_PHY is not set
  # CONFIG_ICS932S401 is not set
@@ -87,7 +87,7 @@
  # CONFIG_IDEAPAD_LAPTOP is not set
  # CONFIG_IDE_GD is not set
  # CONFIG_IDE_PROC_FS is not set
-@@ -2231,8 +2231,8 @@
+@@ -2237,8 +2237,8 @@
  # CONFIG_JME is not set
  CONFIG_JOLIET=y
  # CONFIG_JSA1212 is not set
@@ -98,7 +98,7 @@
  # CONFIG_KALLSYMS_ABSOLUTE_PERCPU is not set
  # CONFIG_KALLSYMS_ALL is not set
  CONFIG_KALLSYMS_BASE_RELATIVE=y
-@@ -2470,7 +2470,7 @@
+@@ -2477,7 +2477,7 @@
  # CONFIG_MAC_PARTITION is not set
  # CONFIG_MAG3110 is not set
  # CONFIG_MAGIC_SYSRQ is not set
@@ -107,7 +107,7 @@
  # CONFIG_MAGIC_SYSRQ_SERIAL is not set
  # CONFIG_MAILBOX is not set
  # CONFIG_MANDATORY_FILE_LOCKING is not set
-@@ -3220,7 +3220,8 @@
+@@ -3227,7 +3227,8 @@
  # CONFIG_NFT_OBJREF is not set
  # CONFIG_NFT_RT is not set
  # CONFIG_NFT_SET_BITMAP is not set
@@ -117,7 +117,7 @@
  # CONFIG_NF_CONNTRACK_AMANDA is not set
  # CONFIG_NF_CONNTRACK_EVENTS is not set
  # CONFIG_NF_CONNTRACK_FTP is not set
-@@ -3246,14 +3247,14 @@
+@@ -3253,14 +3254,14 @@
  # CONFIG_NF_CT_PROTO_GRE is not set
  # CONFIG_NF_CT_PROTO_SCTP is not set
  # CONFIG_NF_CT_PROTO_UDPLITE is not set
@@ -134,7 +134,7 @@
  # CONFIG_NF_NAT_AMANDA is not set
  # CONFIG_NF_NAT_FTP is not set
  # CONFIG_NF_NAT_H323 is not set
-@@ -3635,7 +3636,7 @@
+@@ -3642,7 +3643,7 @@
  # CONFIG_PRISM54 is not set
  # CONFIG_PROC_CHILDREN is not set
  CONFIG_PROC_FS=y
@@ -143,7 +143,7 @@
  # CONFIG_PROC_PAGE_MONITOR is not set
  CONFIG_PROC_STRIPPED=y
  CONFIG_PROC_SYSCTL=y
-@@ -3722,7 +3723,7 @@
+@@ -3729,7 +3730,7 @@
  # CONFIG_RCU_NOCB_CPU is not set
  # CONFIG_RCU_PERF_TEST is not set
  # CONFIG_RCU_TORTURE_TEST is not set
@@ -152,7 +152,7 @@
  # CONFIG_RCU_TRACE is not set
  # CONFIG_RC_ATI_REMOTE is not set
  # CONFIG_RC_CORE is not set
-@@ -5721,7 +5722,7 @@
+@@ -5728,7 +5729,7 @@
  # CONFIG_WLCORE is not set
  # CONFIG_WL_MEDIATEK is not set
  CONFIG_WL_TI=y

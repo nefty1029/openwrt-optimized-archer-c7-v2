@@ -13,7 +13,7 @@
  	# If this number is exceeded, further requests are
  	# queued until the number of running requests drops
  	# below the limit again.
--	option max_requests 1
+-	option max_requests 3
 +	option max_requests 2
  
  	# Maximum number of concurrent connections.
