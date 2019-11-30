@@ -301,3 +301,4 @@ CONFIG_PACKAGE_kmod-hwmon-core=y
 # CONFIG_PACKAGE_kmod-hwmon-w83793 is not set
 # CONFIG_PACKAGE_kmod-pmbus-core is not set
 # CONFIG_PACKAGE_kmod-pmbus-zl6100 is not set
+
