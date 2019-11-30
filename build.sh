@@ -93,7 +93,7 @@ fi
 echo -e "$YELLOW--> Prepare for multicore compile... $NC"
 make download
 # Make output folders
-echo -e "$YELLOW--> Starting compile... $NC"
+echo -e "$txtgrn--> Starting compile... $NC"
 mkdir -p ../output
 
 # Check for debug and compile
