@@ -5,8 +5,8 @@
 set -e
 
 #commands
-COMMAND='$1'
-ADDITIONAL='$2'
+COMMAND="$1"
+
 #Path
 TOP=${PWD}
 
@@ -24,7 +24,7 @@ txtblu='\e[0;34m' # Blue
 echo -e "$YELLOW--> Setting up enviroment... $NC"
 GIT_URL='https://git.openwrt.org/openwrt/openwrt.git'
 GIT_BRANCH='v19.07.0-rc1'
-RESET_GIT='false'
+RESET_GIT='true'
 CORES=`cat /proc/cpuinfo | grep processor | wc -l`
 EXTRA_OPTIONS='true'
 DEBUG='true'
@@ -37,7 +37,7 @@ echo -e "$txtgrn-->  Argument: $1"
 
 # Git clone openwrt openwrt
 echo -e "$txtgrn--> Checking for source files... $NC"
-if [ ! -d openwrt/ ]
+if [ ! -d ${PWD}/openwrt/ ]
     then
         echo -e "No source files found"
         echo -e "$YELLOW--> Starting git clone for $GIT_URL $NC"
@@ -50,17 +50,18 @@ if [ ! -d openwrt/ ]
         echo -e "$txtgrn --> Found existing source files"
         echo -e "$txtgrn --> Updating source files"
 
-        cd openwrt
+        
         rm -rf feeds/*
         rm -rf package/*
 
         if [ $RESET_GIT = true ]
             then
                 echo -e "$YELLOW--> Resetting git... $NC"
+		cd openwrt
                 git fetch origin
-                git reset --hard origin/$GIT_BRANCH
+                git reset --hard 
                 git clean -f -d
-                git pull
+                git pull $GIT_URL $GIT_BRANCH
                 make dirclean
             else
                 echo -e "$YELLOW--> Cleaning up source... $NC"
@@ -70,19 +71,22 @@ if [ ! -d openwrt/ ]
         ./scripts/feeds install -a
 fi
 
-# Setup .config from config.seed and update seed for new changes
-	echo -e "$txtred--> Setup source for compile... $NC"  
-	cp ../config.seed ../openwrt/.config
-	make defconfig
 
-if [$1 = 'buildconfig']
+
+if [ "$COMMAND"]
 then
+
 	echo -e "$txtblu--> Custom setup for compile... $NC"  
 	make menuconfig
 	cp ../config.seed ../openwrt/.config
 	make defconfig
 else
+
 	echo -e "$txtred--> config not customize.. $NC"  
+	# Setup .config from config.seed and update seed for new changes
+	echo -e "$txtred--> Setup source for compile... $NC"  
+	cp ../config.seed ../openwrt/.config
+	make defconfig
 
 fi
 # Prepare for multicore compile
