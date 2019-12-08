@@ -73,22 +73,49 @@ fi
 
 
 
-if [ "$COMMAND"]
-then
+mk_menuconfig()
+{	
 
 	echo -e "$txtblu--> Custom setup for compile... $NC"  
 	make menuconfig
-	cp ../config.seed ../openwrt/.config
-	make defconfig
-else
+	cp ../openwrt/config.seed ../openwrt/.config
+	cp ../openwrt/config.seed ../config_$(date +%Y%m%d%H%M)
+	make defconfig 
+}
+mk_defconfig()
+{	
 
-	echo -e "$txtred--> config not customize.. $NC"  
+	echo -e "$txtred--> config not customize..Read enter to continue $NC"  
 	# Setup .config from config.seed and update seed for new changes
 	echo -e "$txtred--> Setup source for compile... $NC"  
 	cp ../config.seed ../openwrt/.config
 	make defconfig
 
-fi
+}
+echo -e "$txtblu-->####################################################"
+echo -e "$txtblu-->####################################################"
+echo -e "$txtblu-->####################################################"
+echo -e "$txtblu-->####################################################"
+echo -e "$txtblu-->#####do you want customide the build (y/n)?#########" 
+echo -e "$txtblu-->#####menuconfig will be launch######################"
+echo -e "$txtblu-->#####save the new config with name config.seed #####"
+echo -e "$txtblu-->####################################################"
+echo -e "$txtblu-->####################################################"
+echo -e "$txtblu-->####################################################"
+echo -e "$txtblu-->####################################################"
+read -p "" choice
+
+case "$choice" in 
+  y|Y) echo "choice menuconfig"
+	mk_menuconfig
+	;;
+  n|N) echo "choice last good config stored in main folder"
+	mk_defconfig
+	;;
+  *) echo "invalid";;
+esac
+
+
 # Prepare for multicore compile
 echo -e "$YELLOW--> Prepare for multicore compile... $NC"
 make download
