@@ -23,7 +23,7 @@ txtblu='\e[0;34m' # Blue
 # Enviroment
 echo -e "$YELLOW--> Setting up enviroment... $NC"
 GIT_URL='https://git.openwrt.org/openwrt/openwrt.git'
-GIT_BRANCH='v19.07.0-rc1'
+GIT_BRANCH='v19.07.0'
 RESET_GIT='true'
 CORES=`cat /proc/cpuinfo | grep processor | wc -l`
 EXTRA_OPTIONS='true'
@@ -77,6 +77,7 @@ mk_menuconfig()
 {	
 
 	echo -e "$txtblu--> Custom setup for compile... $NC"  
+	cp ../config.seed ../openwrt/.config
 	make menuconfig
 	cp ../openwrt/config.seed ../openwrt/.config
 	cp ../openwrt/config.seed ../config_$(date +%Y%m%d%H%M)
@@ -86,7 +87,6 @@ mk_defconfig()
 {	
 
 	echo -e "$txtred--> config not customize..Read enter to continue $NC"  
-	# Setup .config from config.seed and update seed for new changes
 	echo -e "$txtred--> Setup source for compile... $NC"  
 	cp ../config.seed ../openwrt/.config
 	make defconfig
