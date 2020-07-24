@@ -1,6 +1,5 @@
-This is a modified ath79 build of the [firmware](https://github.com/infinitnet/lede-ar71xx-optimized-archer-c7-v2) configured by r00t ([discussion](https://forum.openwrt.org/t/1382)) that includes various patches from [gwlim](https://github.com/gwlim/mips74k-ar71xx-lede-patch) with a lighter package selection.
+This is a modified ath79 build based on the [firmware](https://github.com/vurrut/openwrt-optimized-archer-c7-v2) by Vurrut, which is based on the [firmware](https://github.com/shunjou/openwrt-optimized-archer-c7-v2) by shunjou, which is based on the [firmware](https://github.com/infinitnet/lede-ar71xx-optimized-archer-c7-v2) configured by r00t ([discussion](https://forum.openwrt.org/t/1382) Closed as of May 20, 2020) that includes various patches from [gwlim](https://github.com/gwlim/mips74k-ar71xx-lede-patch) with a lighter package selection.
 
-A similar build for the Archer C2600 is available [here](https://github.com/shunjou/openwrt-optimized-archer-c2600).
 \
 \
 Migration from existing ar71xx system requires a forced sysupgrade via ssh¹:
