@@ -1,6 +1,12 @@
 This is a modified ath79 build based on the [firmware](https://github.com/vurrut/openwrt-optimized-archer-c7-v2) by Vurrut, which is based on the [firmware](https://github.com/shunjou/openwrt-optimized-archer-c7-v2) by shunjou, which is based on the [firmware](https://github.com/infinitnet/lede-ar71xx-optimized-archer-c7-v2) configured by r00t ([Discussion](https://forum.openwrt.org/t/1382) has been closed as of May 20, 2020) that includes various patches from [gwlim](https://github.com/gwlim/mips74k-ar71xx-lede-patch) with a lighter package selection.
 \
 \
+This release will be focused on maintenance. No new packages will be added and only the existing code and packages will be updated. 
+Expect a new release every first week of the month unless there are publicized security vulnerabilities.
+\
+If you want to add new packages to the firmware, kindly fork this repository and add the packages to your own firmware.
+\
+\
 Migration from existing ar71xx system requires a forced sysupgrade via ssh¹:
 ```
 cd /tmp
