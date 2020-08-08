@@ -3,6 +3,7 @@ This is a modified ath79 build based on the [firmware](https://github.com/vurrut
 \
 This release will be focused on maintenance. No new packages will be added to maintain the small file size 
 and only the existing code and packages will be updated. 
+\
 Expect a new release every last week of the month unless there are publicized security vulnerabilities.
 \
 If you want to add new packages to the firmware, kindly fork this repository and add the packages to your own firmware.
