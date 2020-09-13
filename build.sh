@@ -23,7 +23,7 @@ txtblu='\e[0;34m' # Blue
 # Enviroment
 echo -e "$YELLOW--> Setting up enviroment... $NC"
 GIT_URL='https://git.openwrt.org/openwrt/openwrt.git'
-GIT_BRANCH='v19.07.3'
+GIT_BRANCH='v19.07.4'
 RESET_GIT='true'
 CORES=`cat /proc/cpuinfo | grep processor | wc -l`
 EXTRA_OPTIONS='true'
