@@ -13,7 +13,7 @@ If you want to add new packages to the firmware, kindly fork this repository and
 Migration from existing ar71xx system requires a forced sysupgrade via ssh¹:
 ```
 cd /tmp
-wget https://github.com/nefty1029/openwrt-optimized-archer-c7-v2/releases/download/v19.07.4/openwrt-ath79-generic-tplink_archer-c7-v2-squashfs-sysupgrade.bin
+wget https://github.com/nefty1029/openwrt-optimized-archer-c7-v2/releases/download/v19.07.5/openwrt-ath79-generic-tplink_archer-c7-v2-squashfs-sysupgrade.bin
 sha256sum openwrt-ath79-generic-tplink_archer-c7-v2-squashfs-sysupgrade.bin
 sed -i 's#pci0000:01/0000:01:00.0#pci0000:00/0000:00:00.0#g; s#platform/qca955x_wmac#platform/ahb/ahb:apb/18100000.wmac#g' /etc/config/wireless
 sysupgrade -F openwrt-ath79-generic-tplink_archer-c7-v2-squashfs-sysupgrade.bin
